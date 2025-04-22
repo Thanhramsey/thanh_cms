@@ -57,14 +57,15 @@ class RegisterController extends Controller
         // dd($user);
 
         // Đăng nhập người dùng sau khi đăng ký (tùy chọn)
-        Auth::login($user);
+        // Auth::login($user);
 
         // Debug Step 4: Kiểm tra trạng thái đăng nhập sau khi gọi Auth::login()
-        dump(Auth::check()); // Hiển thị true nếu đã đăng nhập
-        dump(Auth::user());  // Hiển thị thông tin người dùng đã đăng nhập
+        // dump(Auth::check()); // Hiển thị true nếu đã đăng nhập
+        // dump(Auth::user());  // Hiển thị thông tin người dùng đã đăng nhập
         // dump(session()->all()); // Xem toàn bộ session (có thể chứa thông tin user)
 
         // Chuyển hướng người dùng sau khi đăng ký thành công
-        return redirect('/dashboard');
+         // Chuyển hướng trở lại trang login với thông báo thành công
+        return redirect('/login')->with('success', 'Bạn đã đăng ký thành công. Vui lòng đăng nhập.');
     }
 }
