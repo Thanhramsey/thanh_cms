@@ -126,6 +126,18 @@
                         <span class="sidebar-text">Dashboard</span>
                     </a>
                 </li>
+                <li class="nav-item  active ">
+                    <a href="admin/news" class="nav-link">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                            </svg>
+                        </span>
+                        <span class="sidebar-text">News</span>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="https://demo.themesberg.com/volt-pro/pages/kanban.html" target="_blank"
                         class="nav-link d-flex justify-content-between">
@@ -386,7 +398,8 @@
                 <li class="nav-item">
                     <a href="https://themesberg.com" target="_blank" class="nav-link d-flex align-items-center">
                         <span class="sidebar-icon">
-                            <img src="assets/img/themesberg.svg" height="20" width="28" alt="Themesberg Logo">
+                            <img src="assets/img/themesberg.svg" height="20" width="28"
+                                alt="Themesberg Logo">
                         </span>
                         <span class="sidebar-text">Themesberg</span>
                     </a>
@@ -410,7 +423,6 @@
     </nav>
 
     <main class="content">
-
         <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
             <div class="container-fluid px-0">
                 <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
@@ -427,8 +439,8 @@
                                             clip-rule="evenodd"></path>
                                     </svg>
                                 </span>
-                                <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Search"
-                                    aria-label="Search" aria-describedby="topbar-addon">
+                                <input type="text" class="form-control" id="topbarInputIconLeft"
+                                    placeholder="Search" aria-label="Search" aria-describedby="topbar-addon">
                             </div>
                         </form>
                         <!-- / Search form -->
@@ -437,8 +449,8 @@
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item dropdown">
                             <a class="nav-link text-dark notification-bell unread dropdown-toggle"
-                                data-unread-notifications="true" href="#" role="button" data-bs-toggle="dropdown"
-                                data-bs-display="static" aria-expanded="false">
+                                data-unread-notifications="true" href="#" role="button"
+                                data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                 <svg class="icon icon-sm text-gray-900" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -454,7 +466,8 @@
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <!-- Avatar -->
-                                                <img alt="Image placeholder" src="assets/img/team/profile-picture-1.jpg"
+                                                <img alt="Image placeholder"
+                                                    src="assets/img/team/profile-picture-1.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -475,7 +488,8 @@
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <!-- Avatar -->
-                                                <img alt="Image placeholder" src="assets/img/team/profile-picture-2.jpg"
+                                                <img alt="Image placeholder"
+                                                    src="assets/img/team/profile-picture-2.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -496,7 +510,8 @@
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <!-- Avatar -->
-                                                <img alt="Image placeholder" src="assets/img/team/profile-picture-3.jpg"
+                                                <img alt="Image placeholder"
+                                                    src="assets/img/team/profile-picture-3.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 m-2">
@@ -517,7 +532,8 @@
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <!-- Avatar -->
-                                                <img alt="Image placeholder" src="assets/img/team/profile-picture-4.jpg"
+                                                <img alt="Image placeholder"
+                                                    src="assets/img/team/profile-picture-4.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -538,7 +554,8 @@
                                         <div class="row align-items-center">
                                             <div class="col-auto">
                                                 <!-- Avatar -->
-                                                <img alt="Image placeholder" src="assets/img/team/profile-picture-5.jpg"
+                                                <img alt="Image placeholder"
+                                                    src="assets/img/team/profile-picture-5.jpg"
                                                     class="avatar-md rounded">
                                             </div>
                                             <div class="col ps-0 ms-2">
@@ -620,8 +637,9 @@
                                 <form action="{{ route('logout') }}" method="POST" class="d-inline">
                                     @csrf
                                     <button type="submit" class="dropdown-item d-flex align-items-center">
-                                        <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="dropdown-icon text-danger me-2" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
                                             </path>
@@ -637,6 +655,7 @@
         </nav>
 
         <div class="py-4">
+            @yield('content')
             <div class="dropdown">
                 <button class="btn btn-gray-800 d-inline-flex align-items-center me-2 dropdown-toggle"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1147,8 +1166,8 @@
                                 <!-- Project 1 -->
                                 <div class="row mb-4">
                                     <div class="col-auto">
-                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="icon icon-sm text-gray-500" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
                                             <path fill-rule="evenodd"
                                                 d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
@@ -1172,8 +1191,8 @@
                                 <!-- Project 2 -->
                                 <div class="row align-items-center mb-4">
                                     <div class="col-auto">
-                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="icon icon-sm text-gray-500" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
                                             <path fill-rule="evenodd"
                                                 d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
@@ -1197,8 +1216,8 @@
                                 <!-- Project 3 -->
                                 <div class="row align-items-center mb-4">
                                     <div class="col-auto">
-                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="icon icon-sm text-gray-500" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
                                             <path fill-rule="evenodd"
                                                 d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
@@ -1222,8 +1241,8 @@
                                 <!-- Project 4 -->
                                 <div class="row align-items-center mb-3">
                                     <div class="col-auto">
-                                        <svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="icon icon-sm text-gray-500" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
                                             <path fill-rule="evenodd"
                                                 d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
@@ -1317,8 +1336,8 @@
                                     </div>
                                     <div class="small card-stats">
                                         United States
-                                        <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="icon icon-xs text-success" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd"
                                                 d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
                                                 clip-rule="evenodd"></path>
@@ -1353,8 +1372,8 @@
                                     </div>
                                     <div class="small card-stats">
                                         Computers Electronics > Technology
-                                        <svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="icon icon-xs text-success" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd"
                                                 d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
                                                 clip-rule="evenodd"></path>
@@ -1385,7 +1404,8 @@
                             <div class="d-block">
                                 <div class="d-flex align-items-center me-5">
                                     <div class="icon-shape icon-sm icon-shape-danger rounded me-3">
-                                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <svg fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd"
                                                 d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z"
                                                 clip-rule="evenodd"></path>
@@ -1398,7 +1418,8 @@
                                 </div>
                                 <div class="d-flex align-items-center pt-3">
                                     <div class="icon-shape icon-sm icon-shape-purple rounded me-3">
-                                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <svg fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z">
                                             </path>
@@ -1421,7 +1442,8 @@
                     data-bs-toggle="collapse" href="#theme-settings" role="button" aria-expanded="false"
                     aria-controls="theme-settings"></button>
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <p class="m-0 mb-1 me-4 fs-7">Open source <span role="img" aria-label="gratitude">💛</span></p>
+                    <p class="m-0 mb-1 me-4 fs-7">Open source <span role="img"
+                            aria-label="gratitude">💛</span></p>
                     <a class="github-button" href="https://github.com/themesberg/volt-bootstrap-5-dashboard"
                         data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star"
                         data-size="large" data-show-count="true"
@@ -1439,7 +1461,8 @@
                 </a>
                 <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
                 <div class="d-flex justify-content-center">
-                    <a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
+                    <a class="me-3"
+                        href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
                         target="_blank">
                         <img src="assets/img/technologies/bootstrap-5-logo.svg" class="image image-xs">
                     </a>
@@ -1468,7 +1491,8 @@
             <div class="row">
                 <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
                     <p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
-                            class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
+                            class="text-primary fw-normal" href="https://themesberg.com"
+                            target="_blank">Themesberg</a>
                     </p>
                 </div>
                 <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
