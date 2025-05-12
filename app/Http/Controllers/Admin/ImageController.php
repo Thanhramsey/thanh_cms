@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Image;
 
 class ImageController extends Controller
 {
@@ -12,7 +13,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::latest()->paginate(10); // Lấy danh sách tin tức mới nhất, phân trang 10 mục/trang
+        return view('admin.images.index', compact('images'));
     }
 
     /**
