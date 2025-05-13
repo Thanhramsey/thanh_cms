@@ -149,4 +149,26 @@ class NewsController extends Controller
     
         return response()->json(['error' => 'Không thể tải lên hình ảnh.'], 400);
     }
+    public function uploadMedia(Request $request)
+{
+    if ($request->hasFile('file')) {
+        $file = $request->file('file');
+        // Tạo tên file duy nhất để tránh ghi đè
+        $filename = uniqid() . '_' . time() . '_' . $file->getClientOriginalName();
+
+        // Lưu vào storage/app/public/media.
+        // Bạn có thể muốn tạo các thư mục con dựa trên loại file nếu cần
+        // Ví dụ: $subFolder = $this->getSubfolderForFileType($file->getClientMimeType());
+        // $path = $file->storeAs('public/media/' . $subFolder, $filename);
+        $path = $file->storeAs('public/news/media', $filename);
+
+        // Trả về URL công khai của file
+        return response()->json(['location' => asset('storage/' . $path)]); // Trả về URL của hình ảnh
+    }
+    // Thêm kiểm tra lỗi và thông báo rõ ràng hơn
+    if ($request->file('file') && !$request->file('file')->isValid()) {
+        return response()->json(['error' => 'Uploaded file is not valid. Error: ' . $request->file('file')->getError()], 400);
+    }
+    return response()->json(['error' => 'No file uploaded or file upload error.'], 400);
+}
 }

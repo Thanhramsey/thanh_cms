@@ -15,5 +15,5 @@
 @endsection
 
 @push('scripts')
-    @include('admin.news.scripts')
+    @include('admin.modules.scripts')
 @endpush
