@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\CategoryController;
 use \UniSharp\LaravelFilemanager\Lfm; // Đừng quên dòng này ở đầu file
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login'); // Trang hiển thị form login
@@ -18,8 +19,8 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard.dashboard');
+    Route::get('admin/dashboard', function () {
+        return view('admin.dashboard.dashboard');
     });
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
@@ -27,9 +28,10 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('news', NewsController::class); // Các route CRUD cho news
+        Route::resource('images', ImageController::class);
+        Route::resource('categorys', CategoryController::class);
         Route::post('/news/upload-image', [NewsController::class, 'uploadImage'])->name('news.upload_image'); // Route upload image
-         Route::post('/news/upload-media', [NewsController::class, 'uploadMedia'])->name('news.upload_media'); // Route upload image
-        Route::resource('images', ImageController::class); // Các route cho images
+        Route::post('/news/upload-media', [NewsController::class, 'uploadMedia'])->name('news.upload_media'); // Route upload image
         // Các route admin khác
     });
 });

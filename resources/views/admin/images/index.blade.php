@@ -16,7 +16,13 @@
                         <tr>
                             <th>ID</th>
                             <th>Tiêu đề</th>
-                            <th>Ngày đăng</th>
+                            <th>Ảnh</th>
+                            <th>Mô tả</th>
+                            <th>Nhóm</th>
+                            <th>Thứ tự</th>
+                            <th>Alt Text</th>
+                            <th>Trạng thái</th>
+                            <th>Ngày tạo</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
@@ -25,14 +31,28 @@
                             <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->title }}</td>
-
                                 <td>
-                                    @if ($item->is_published)
-                                        <span class="badge bg-success">Đã đăng</span>
+                                    @if ($item->path)
+                                        <img src="{{ asset('storage/' . $item->path) }}"
+                                            alt="{{ $item->alt_text ?? ($item->title ?? 'Ảnh') }}"
+                                            style="max-width: 80px; max-height: 80px; object-fit: cover;">
                                     @else
-                                        <span class="badge bg-warning">Chưa đăng</span>
+                                        Không có ảnh
                                     @endif
                                 </td>
+                                <td>{{ Str::limit($item->description, 50) }}</td>
+                                {{-- <td>{{ $item->group }}</td> --}}
+                                <td>{{ $item->categoryName() }}</td>
+                                <td>{{ $item->order }}</td>
+                                <td>{{ $item->alt_text }}</td>
+                                <td>
+                                    @if ($item->active)
+                                        <span class="badge bg-success">Hoạt động</span>
+                                    @else
+                                        <span class="badge bg-danger">Không hoạt động</span>
+                                    @endif
+                                </td>
+                                <td>{{ $item->created_at }}</td>
                                 <td>
                                     <a href="{{ route('admin.images.edit', $item->id) }}"
                                         class="btn btn-sm btn-warning">Sửa</a>
@@ -47,7 +67,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="text-center">Không có tin tức nào.</td>
+                                <td colspan="10" class="text-center">Không có hình ảnh nào.</td>
                             </tr>
                         @endforelse
                     </tbody>

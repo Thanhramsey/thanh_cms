@@ -44,7 +44,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             // Đăng nhập thành công
             $request->session()->regenerate(); // Bảo mật: ngăn chặn session fixation
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/admin/dashboard');
         }
 
         // Đăng nhập thất bại
