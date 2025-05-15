@@ -6,6 +6,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\RoleController;
+
 use \UniSharp\LaravelFilemanager\Lfm; // Đừng quên dòng này ở đầu file
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login'); // Trang hiển thị form login
@@ -30,6 +33,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('news', NewsController::class); // Các route CRUD cho news
         Route::resource('images', ImageController::class);
         Route::resource('categorys', CategoryController::class);
+        Route::resource('users', UserController::class);
+         Route::resource('roles', RoleController::class);
         Route::post('/news/upload-image', [NewsController::class, 'uploadImage'])->name('news.upload_image'); // Route upload image
         Route::post('/news/upload-media', [NewsController::class, 'uploadMedia'])->name('news.upload_media'); // Route upload image
         // Các route admin khác
