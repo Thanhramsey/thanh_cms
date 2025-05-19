@@ -7,25 +7,41 @@ $(window).on("load", function () {
 
 $('.side-menu').removeClass('hidden');
 
-const swiper = new Swiper('.swiper-container', {
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
-  });
+const swiperContainers = document.querySelectorAll('.swiper');
+swiperContainers.forEach(swiperElement => {
+    const categoryId = swiperElement.classList[1].split('-').pop(); // Lấy ID danh mục từ class
+    new Swiper(swiperElement, {
+        slidesPerView: 5, // Số lượng sản phẩm hiển thị mặc định
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+            el: swiperElement.querySelector('.swiper-pagination'),
+            clickable: true,
+        },
+        navigation: {
+            nextEl: swiperElement.querySelector('.swiper-button-next'),
+            prevEl: swiperElement.querySelector('.swiper-button-prev'),
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1200: {
+                slidesPerView: 5,
+                spaceBetween: 20,
+            },
+        },
+    });
+});
 setTimeout(function(){
     $('.loader-bg').fadeToggle();
 }, 1000);

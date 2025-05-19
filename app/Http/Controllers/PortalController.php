@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Menu;
+use App\Models\ProductCategory;
+
 use Illuminate\Http\Request;
 
 class PortalController extends Controller
@@ -12,6 +14,9 @@ class PortalController extends Controller
                      ->orderBy('order')
                      ->with('children')
                      ->get();
-        return view('portal.index',compact('menus'));
+        $productCategories = ProductCategory::with('products')->where('is_active', true)->get();
+
+    
+        return view('portal.index',compact('menus','productCategories'));
     }
 }

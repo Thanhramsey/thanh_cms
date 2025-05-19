@@ -21,8 +21,6 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-
-
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
@@ -66,7 +64,6 @@
     <script src="{{ asset('portal_assets/vendor/js/wow.min.js') }}"></script>
     <script src="{{ asset('portal_assets/vendor/js/jquery.fancybox.min.js') }}"></script>
     <script src="{{ asset('portal_assets/js/particles.min.js') }}"></script>
-
     <script src="{{ asset('portal_assets/vendor/js/contact_us.js') }}"></script>
     <script src="{{ asset('portal_assets/js/circle-progress.min.js') }}"></script>
     <script src="{{ asset('portal_assets/js/script.js') }}"></script>

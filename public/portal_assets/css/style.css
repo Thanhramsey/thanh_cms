@@ -2272,8 +2272,6 @@ header a.logo img {
   position: relative;
   text-align: center;
   font-size: 18px;
-  background: #000;
-
   /* Căn giữa nội dung */
   display: flex;
   justify-content: center;
@@ -2303,6 +2301,37 @@ header a.logo img {
   font-size: 18px;
   margin: 0;
 }
+section#about,section#product-list{
+    padding: 3.5rem 0;
+}
 
+#product-list h2,#product-list h3, #product-list p{
+    color: black;
+    font-weight: bold;
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+.swiper-wrapper {
+    width: fit-content; /* Để vừa với nội dung các slide */
+}
+.swiper-slide {
+    width: auto !important; /* Để kích thước slide theo nội dung */
+    padding-right: 15px;
+}
+.product-item {
+    padding: 15px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 200px; /* Đảm bảo mỗi item có chiều rộng tối thiểu */
+}
+.product-item img {
+    max-height: 100px;
+    margin-bottom: 10px;
+}
 
 

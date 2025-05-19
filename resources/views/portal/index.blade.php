@@ -168,231 +168,40 @@
             </div>
         </div>
     </section>
-    {{-- <section id="section-slideshow">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <img src="{{ asset('portal_assets/img/about-img.png') }}" alt="Slide 1" />
-                    <div class="slide-caption">
-                        <h2>Tiêu đề 1</h2>
-                        <p>Mô tả ngắn gọn cho slide 1.</p>
-                    </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <img src="{{ asset('portal_assets/img/about-img.png') }}" alt="Slide 2" />
-                    <div class="slide-caption">
-                        <h2>Tiêu đề 2</h2>
-                        <p>Mô tả ngắn gọn cho slide 2.</p>
-                    </div>
-                </div>
-                <!-- Thêm các slide khác nếu cần -->
-            </div>
-            <!-- Nút điều hướng -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <!-- Phân trang -->
-            <div class="swiper-pagination"></div>
-        </div>
-    </section> --}}
-
-    {{-- <section class="stats-sec pt-0" id="stats-sec">
+    <section id="product-list">
         <div class="container">
-            <div class="row circular-wrap text-center">
-                <div class="col-12 col-lg-4 wow bounceIn">
-                    <div id="circle" class="circle" data-value="0.77">
-                        <h6 class="counter-num">257%</h6>
-                    </div>
-                    <h4 class="stats-heading">Reliability</h4>
-                    <p class="stats-para">Lorem ipsum dolor sit amet.</p>
+            @foreach ($productCategories as $category)
+                <div id="{{ Str::slug($category->name) }}" class="mb-5">
+                    <h2>{{ $category->name }}</h2>
+                    @if ($category->products->isNotEmpty())
+                        <div class="swiper category-products-{{ $category->id }}">
+                            <div class="swiper-wrapper">
+                                @foreach ($category->products as $product)
+                                    <div class="swiper-slide">
+                                        <div class="product-item">
+                                            <h3>{{ $product->name }}</h3>
+                                            @if ($product->image)
+                                                <img src="{{ asset('storage/' . $product->image) }}"
+                                                    alt="{{ $product->name }}" style="max-width: 100px;">
+                                            @endif
+                                            <p>{{ $product->description }}</p>
+                                            <a href="{{ $product->link ?? '#' }}" class="btn btn-primary">Xem chi
+                                                tiết</a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    @else
+                        <p>Không có sản phẩm nào thuộc danh mục này.</p>
+                    @endif
                 </div>
-                <div class="col-12 col-lg-4 wow bounceIn wrap-2">
-                    <div id="circletwo" class="circle" data-value="0.96">
-                        <h6 class="counter-num">96%</h6>
-                    </div>
-                    <h4 class="stats-heading">Up Time</h4>
-                    <p class="stats-para">Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="col-12 col-lg-4 wow bounceIn">
-                    <div id="circlethree" class="circle" data-value="0.75">
-                        <h6 class="counter-num">317%</h6>
-                    </div>
-                    <h4 class="stats-heading">Clients Worldwide</h4>
-                    <p class="stats-para">Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
-    <section class="learn-more-section">
-        <div class="container">
-            <div class="text-area wow fadeInUpBig heading-area" data-wow-delay=".5s">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="heading text-white">Looking for reliable hosting <span class="d-block">for your
-                                website?</span></h2>
-                        <a href="portal_assets/standalone.html" class="btn btn-medium btn-rounded btn-blue">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <section id="prices" class="prices padding-up">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12 col-md-10 col-lg-8 offset-md-1 offset-lg-2 wow zoomIn heading-area"
-                    data-wow-duration="1s" data-wow-delay=".1s">
-                    <h3 class="heading text-center">Easy and affordable web <span class="d-block">hosting packages</span>
-                    </h3>
-                    <p class="text text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                </div>
-            </div>
-            <div class="row padding-top-half">
-                <div class="col-12 col-lg-4 wow fadeInLeftBig" data-wow-delay=".4s">
-                    <div class="price-item text-center">
-                        <div class="price_header">
-                            <p class="price_header_text">Starter Plan</p>
-                        </div>
-                        <p class="actual_price">$19<br><span class="small_font">3 Month</span> </p>
-                        <ul class="price-list">
-                            <li>Modern & Creative Design</li>
-                            <li>Premium Plugins</li>
-                            <li>Clean Code</li>
-                            <li>Responsive Layouts</li>
-                            <li>Google Fonts</li>
-                            <li>Highly Customizable</li>
-                        </ul>
-                        <a href="#" class="scroll btn btn-medium btn-rounded btn-blue-dark-white mb-5">Load More</a>
-                    </div>
-                </div>
-                <!-- Price-2 -->
-                <div class="col-12 col-lg-4 wow fadeIn" data-wow-delay=".8s">
-                    <div class="price-item-center text-center">
-                        <div class="price_header-center">
-                            <p class="price_header_text">Standard Plan</p>
-                        </div>
-                        <p class="actual_price">$59<br><span class="small_font">6 Months</span> </p>
-                        <ul class="price-list">
-                            <li>Modern & Creative Design</li>
-                            <li>Premium Plugins</li>
-                            <li>Clean Code</li>
-                            <li>Responsive Layouts</li>
-                            <li>Google Fonts</li>
-                            <li>Highly Customizable</li>
-                        </ul>
-                        <a href="#" class="scroll btn btn-medium btn-rounded btn-primary mb-5">Load More</a>
-                    </div>
-                </div>
-                <!-- Price-3 -->
-                <div class="col-12 col-lg-4 wow fadeInRightBig" data-wow-delay=".4s">
-                    <div class="price-item text-center">
-                        <div class="price_header">
-                            <p class="price_header_text">Premium Plan</p>
-                        </div>
-                        <p class="actual_price">$99<br><span class="small_font">12 Months</span> </p>
-                        <ul class="price-list">
-                            <li>Modern & Creative Design</li>
-                            <li>Premium Plugins</li>
-                            <li>Clean Code</li>
-                            <li>Responsive Layouts</li>
-                            <li>Google Fonts</li>
-                            <li>Highly Customizable</li>
-                        </ul>
-                        <a href="#" class="scroll btn btn-medium btn-rounded btn-blue-dark-white mb-5">Load More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Pricing -->
-
-    <!-- Start Hosting -->
-    <section class="hosting bg-light-white" id="hosting">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 wow fadeInLeftBig" data-wow-delay=".4s">
-                    <div class="heading-area">
-                        <h2 class="heading mb-0">Ultra VPS Hosting</h2>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        <a href="#contact" class="scroll btn btn-medium btn-rounded btn-primary">Starts at $25 / Month</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 wow fadeIn" data-wow-delay="1.2s">
-                    <div class="img-fluid">
-                        <img src="portal_assets/img/hosting.png" alt="image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Hosting -->
-
-    <!-- Start Testimonials -->
-    <section class="testimonial-section py-0" id="testimonials">
-        <div class="row no-gutters">
-            <div class="col-lg-6 col-md-12 col-sm-12 text-section wow fadeInLeft" data-wow-delay="300ms">
-                <div class="text-area testimonial-heading">
-                    <h5>We have some</h5>
-                    <h2>Happy Customers</h2>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-12 col-sm-12 carousel-section wow fadeInRight" data-wow-delay="300ms">
-                <div class=" text-center testimonial-carousel owl-carousel owl-themes active">
-                    <!-- Item-1 -->
-                    <div class="item">
-                        <div class="testimonials">
-                            <div class="quote">
-                                <i class="fas fa-quote-right"></i>
-                            </div>
-                            <p class="text subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae
-                                egestas mi, vel dapibus diam. Mauris malesuada, nisl non rutrum commodo, sem magna laoreet
-                                tellus, eu euismod dolor enim et mi. In at tempor purus.</p>
-                            <div class="testimonial-image">
-                                <img src="portal_assets/img/testimonial-1.png" alt="image">
-                            </div>
-                            <h5 class="text">Sara Williams</h5>
-                        </div>
-                    </div>
-
-                    <!-- Item-2 -->
-                    <div class="item active">
-                        <div class="testimonials">
-                            <div class="quote">
-                                <i class="fas fa-quote-right"></i>
-                            </div>
-                            <p class="text subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae
-                                egestas mi, vel dapibus diam. Mauris malesuada, nisl non rutrum commodo, sem magna laoreet
-                                tellus, eu euismod dolor enim et mi. In at tempor purus. </p>
-                            <div class="testimonial-image">
-                                <img src="portal_assets/img/testimonial-2.png" alt="image">
-                            </div>
-                            <h5 class="text">Steve Jobs</h5>
-                        </div>
-                    </div>
-
-                    <!-- Item-3 -->
-                    <div class="item">
-                        <div class="testimonials">
-                            <div class="quote">
-                                <i class="fas fa-quote-right"></i>
-                            </div>
-                            <p class="text subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae
-                                egestas mi, vel dapibus diam. Mauris malesuada, nisl non rutrum commodo, sem magna laoreet
-                                tellus, eu euismod dolor enim et mi. In at tempor purus. </p>
-                            <div class="testimonial-image">
-                                <img src="portal_assets/img/testimonial-3.png" alt="image">
-                            </div>
-                            <h5 class="text">Natasha Lee</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Testimonials -->
 
     <!-- Start Blog -->
     <section class="blog-sec" id="blog">
