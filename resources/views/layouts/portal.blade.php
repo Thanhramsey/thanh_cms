@@ -18,6 +18,11 @@
     <link href="{{ asset('portal_assets/css/line-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('portal_assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('portal_assets/css/custom.css') }}" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
@@ -65,7 +70,8 @@
     <script src="{{ asset('portal_assets/vendor/js/contact_us.js') }}"></script>
     <script src="{{ asset('portal_assets/js/circle-progress.min.js') }}"></script>
     <script src="{{ asset('portal_assets/js/script.js') }}"></script>
-
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </body>
 
 </html>

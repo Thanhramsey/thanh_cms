@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\ProductCategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use \UniSharp\LaravelFilemanager\Lfm;
 
 // Authentication Routes
@@ -37,6 +39,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('users', UserController::class);
         Route::resource('roles', RoleController::class);
         Route::resource('menus', MenuController::class); // Thêm dòng này
+        Route::resource('productCategories', ProductCategoryController::class);
+        Route::resource('products', ProductController::class);
         Route::post('/news/upload-image', [NewsController::class, 'uploadImage'])->name('news.upload_image');
         Route::post('/news/upload-media', [NewsController::class, 'uploadMedia'])->name('news.upload_media');
         // Các route admin khác

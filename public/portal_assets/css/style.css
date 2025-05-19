@@ -143,7 +143,9 @@ section{padding: 7.5rem 0;}
   }
   
   .sub-menu a:hover {
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
+        color: #00b7ff;
+    transition: .5s ease;
   }
 
 
@@ -2252,5 +2254,55 @@ header a.logo img {
         padding-top: 0;
     }
 }
+
+
+#section-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  background: #000;
+
+  /* Căn giữa nội dung */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: #fff;
+  text-align: left;
+}
+
+.slide-caption h2 {
+  font-size: 36px;
+  margin: 0 0 10px;
+}
+
+.slide-caption p {
+  font-size: 18px;
+  margin: 0;
+}
+
 
 

@@ -153,6 +153,34 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="admin/productCategories" class="nav-link d-flex justify-content-between">
+                    <span>
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs me-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                            </svg>
+                        </span>
+                        <span class="sidebar-text">Quản lý danh mục <br> sản phẩm</span>
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="admin/products" class="nav-link d-flex justify-content-between">
+                    <span>
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs me-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                            </svg>
+                        </span>
+                        <span class="sidebar-text">Quản lý sản phẩm</span>
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="https://demo.themesberg.com/volt-pro/pages/kanban.html" target="_blank"
                     class="nav-link d-flex justify-content-between">
                     <span>

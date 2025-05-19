@@ -97,10 +97,11 @@
                     <div class="col-12 col-md-6 col-lg-6 text-md-center text-lg-left wow fadeInLeft content-margin"
                         data-wow-duration="1.5s" data-wow-delay="1.2s">
                         <div class="area-heading text-center text-lg-left">
-                            <h1 class="main-font text-white font-weight-bold mb-4">Affordable <span class="d-block">Hosting
-                                    at $3.50</span></h1>
-                            <p class="text-white alt-font mb-5">Donec quis nunc mollis, tincidunt mi vel, pellentesque arcu.
-                                Nam nec tristique ex, vitae posuere enim. Nunc vulputate metus id ex pretium fermentum. </p>
+                            <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG BẠN ĐẾN VỚI <span
+                                    class="d-block">VNPT GIA LAI</span></h1>
+                            <p class="text-white alt-font mb-5">Là thành viên của Tập đoàn Bưu chính Viễn thông Việt Nam
+                                (VNPT). VNPT Gia Lai tự hào là nhà cung cấp hàng đầu các sản phẩm dịch vụ viễn thông - công
+                                nghệ thông tin toàn diện cho cá nhân và tổ chức doanh nghiệp.</p>
                             <a href="#about" class="scroll btn btn-medium btn-rounded btn-trans-white mb-5">GET STARTED
                                 NOW</a>
                         </div>
@@ -119,20 +120,20 @@
                 <div class="row text-center text-lg-left">
                     <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.2s">
                         <span class="about-icon"><a href="javascript:void(0);"><i
-                                    class="la la-laptop-code"></i></a></span>
-                        <h4 class="small-heading main-font">Web Hosting</h4>
-                        <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    class="la la-broadcast-tower"></i></a></span>
+                        <h4 class="small-heading main-font">Dịch vụ viễn thông</h4>
+                        {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
                     </div>
                     <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
-                        <span class="about-icon"><a href="javascript:void(0);"><i class="las la-server"></i></a></span>
-                        <h4 class="small-heading main-font">Vps Servers</h4>
-                        <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <span class="about-icon"><a href="javascript:void(0);"><i
+                                    class="las la-laptop-code"></i></a></span>
+                        <h4 class="small-heading main-font">Dịch vụ số</h4>
+                        {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
                     </div>
                     <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.8s">
-                        <span class="about-icon"><a href="javascript:void(0);"><i
-                                    class="las la-registered"></i></a></span>
-                        <h4 class="small-heading main-font">Domain Registration</h4>
-                        <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <span class="about-icon"><a href="javascript:void(0);"><i class="las la-city"></i></a></span>
+                        <h4 class="small-heading main-font">Hệ sinh thái chuyển đổi số</h4>
+                        {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
                     </div>
                 </div>
             </div>
@@ -145,8 +146,8 @@
                     data-wow-duration="1.5s" data-wow-delay=".5s">
                     <div class="blue_rectangle"></div>
                     <div class="about_img position-relative">
-                        <img src="{{ asset('portal_assets/img/about-img.jpg') }}" alt="About Image">
-                        <a data-fancybox="video" href="https://www.youtube.com/watch?v=7e90gBu4pas"
+                        <img src="{{ asset('portal_assets/img/about-img.png') }}" alt="About Image">
+                        <a data-fancybox="video" href="https://www.youtube.com/watch?v=rRevsM2sW7U"
                             class="video-play-button position-absolute">
                             <i class="las la-play"></i>
                         </a>
@@ -155,19 +156,48 @@
                 <div class="col-sm-12 col-md-6 pl-md-5 wow fadeInRight order-1 order-md-1" data-wow-duration="1.5s"
                     data-wow-delay=".5s">
                     <div class="about-heading">
-                        <p class="text-small alt-font text-red">Have Questions?</p>
-                        <h1 class="heading margin_heading main-font">Hosting Video Tutorials</h1>
-                        <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu. Lorem
-                            ipsum dolor sit amet.</p>
-                        <p class="info my-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mauris arcu.</p>
-                        <a href="#prices" class="scroll btn btn-medium btn-rounded btn-blue mt-2">Learn More</a>
+                        <h1 class="heading margin_heading main-font">Giới thiệu VNPT</h1>
+                        <p class="info">Tập đoàn Bưu chính Viễn thông Việt Nam (VNPT) là một trong những doanh nghiệp
+                            hàng đầu trong lĩnh vực công nghệ thông tin và viễn thông tại Việt Nam.</p>
+                        <p class="info my-4">VNPT không ngừng đổi mới, cung cấp các dịch vụ số hiện đại như hạ tầng mạng,
+                            trung tâm dữ liệu, điện toán đám mây, và các giải pháp chuyển đổi số toàn diện cho cá nhân,
+                            doanh nghiệp và chính phủ.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-    <section class="stats-sec pt-0" id="stats-sec">
+    {{-- <section id="section-slideshow">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('portal_assets/img/about-img.png') }}" alt="Slide 1" />
+                    <div class="slide-caption">
+                        <h2>Tiêu đề 1</h2>
+                        <p>Mô tả ngắn gọn cho slide 1.</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('portal_assets/img/about-img.png') }}" alt="Slide 2" />
+                    <div class="slide-caption">
+                        <h2>Tiêu đề 2</h2>
+                        <p>Mô tả ngắn gọn cho slide 2.</p>
+                    </div>
+                </div>
+                <!-- Thêm các slide khác nếu cần -->
+            </div>
+            <!-- Nút điều hướng -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Phân trang -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section> --}}
+
+    {{-- <section class="stats-sec pt-0" id="stats-sec">
         <div class="container">
             <div class="row circular-wrap text-center">
                 <div class="col-12 col-lg-4 wow bounceIn">
@@ -206,7 +236,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section id="prices" class="prices padding-up">
         <div class="container">
             <div class="row text-center">

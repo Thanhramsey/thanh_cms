@@ -20,7 +20,10 @@ return new class extends Migration
             }
             if (!Schema::hasColumn('news', 'user_id')) {
                 $table->unsignedBigInteger('user_id')->nullable();
-                $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+                $table->foreign('user_id', 'fk_news_user_id') // Ràng buộc có tên
+                      ->references('id')
+                      ->on('users')
+                      ->onDelete('set null');
             }
         });
     }
@@ -31,8 +34,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('news', function (Blueprint $table) {
-            $table->dropForeignIfExists(['user_id']);
-            $table->dropColumnIfExists(['summary', 'content', 'user_id']);
+            $table->dropForeign('fk_news_user_id'); // Xóa theo tên
+            $table->dropColumnIfExists('summary');   // Xóa từng cột
+            $table->dropColumnIfExists('content');
+            $table->dropColumnIfExists('user_id');
         });
     }
 };
