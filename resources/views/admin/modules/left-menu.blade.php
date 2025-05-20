@@ -78,7 +78,7 @@
                         </svg>
 
                     </span>
-                    <span class="sidebar-text">News</span>
+                    <span class="sidebar-text">Quản lý tin tức</span>
                 </a>
             </li>
             <li class="nav-item ">

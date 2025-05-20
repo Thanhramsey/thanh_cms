@@ -1,1 +1,117 @@
-/*-- Use For Custom Styling --*/
+section#about,
+section#product-list {
+    padding: 3.5rem 0;
+}
+
+#product-list h2,
+#product-list h3,
+#product-list p {
+    color: black;
+    font-weight: bold;
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.swiper-wrapper {
+    width: fit-content;
+    margin-bottom: 20px; /* Khoảng cách giữa slider và pagination/navigation */
+}
+
+.swiper-slide {
+    width: auto !important;
+    padding-right: 20px;
+}
+
+.product-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    min-width: 200px;
+    height: 270px;
+}
+
+.product-item img {
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    object-fit: cover;
+    width: 100%; /* Để ảnh scale vừa khung */
+}
+
+.product-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    height: 40px; /* Để mô tả không bị quá dài làm lệch layout */
+    overflow: hidden;
+}
+
+.product-item .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.product-item .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.swiper-pagination {
+    position: relative !important; /* Để không overlay lên nội dung */
+    margin-top: 10px;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #ddd;
+    opacity: 0.8;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+    background: #007bff;
+    opacity: 1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #007bff;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    opacity: 1;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
