@@ -20,6 +20,20 @@
         </div>
     </div>
 </div>
+<div class="mb-3">
+    <label for="type_id" class="form-label">Loại tin</label>
+    <select class="form-control" id="type_id" name="type_id">
+        <option value="">-- Chọn loại tin --</option>
+        @foreach ($newsTypes as $type)
+            <option value="{{ $type->id }}" {{ isset($news) && $news->type_id == $type->id ? 'selected' : '' }}>
+                {{ $type->name }}
+            </option>
+        @endforeach
+    </select>
+    @error('type_id')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+</div>
 
 
 <div class="mb-3">

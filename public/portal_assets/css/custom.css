@@ -115,3 +115,97 @@ h2 {
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
 }
+
+
+/* News */
+    .news-detail .col-md-8.offset-md-2 {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-detail h1.mb-4 ,  .news-detail h2.mb-4 {
+        color: #333;
+        /* font-size: 2.5rem; */
+        font-weight: bold;
+        margin-bottom: 25px !important;
+        border-bottom: 3px solid #007bff;
+        padding-bottom: 10px;
+    }
+
+    .news-detail p.text-muted.mb-3 {
+        color: #6c757d !important;
+        font-style: italic;
+        margin-bottom: 20px !important;
+    }
+
+    .news-detail img.img-fluid.mb-4.rounded {
+        border-radius: 8px !important;
+        margin-bottom: 30px !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-detail .news-content {
+        line-height: 1.8;
+        font-size: 1.05rem;
+        color: #495057;
+        margin-bottom: 30px;
+    }
+
+    .news-detail .news-content h2, .news-detail .news-content h3 {
+        color: #007bff;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    .news-detail .news-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .news-detail .mt-5 .btn-secondary {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .news-detail .mt-5 .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+    } 
+    .news-detail .card {
+        border: 1px solid #f0f0f0;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .news-detail .card-body {
+        padding: 1.5rem;
+    }
+
+    .news-detail .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.5rem;
+    }
+
+    .news-detail .list-unstyled {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .news-detail .list-unstyled li a {
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .news-detail .list-unstyled li a:hover {
+        color: #007bff;
+    }

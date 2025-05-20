@@ -46,16 +46,18 @@
     </div>
     <div id="app">
         <header>
-            @yield('header')
+            @include('portal.module.header')
         </header>
+
 
         <main>
             @yield('content')
         </main>
 
-        <footer>
-            @yield('footer')
-        </footer>
+        <header>
+            @include('portal.module.footer')
+        </header>
+
     </div>
 
     <script src="{{ asset('portal_assets/vendor/js/bundle.min.js') }}"></script>

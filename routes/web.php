@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\PortalNewsController;
 use \UniSharp\LaravelFilemanager\Lfm;
 
 // Authentication Routes
@@ -51,4 +52,8 @@ Route::middleware('auth')->group(function () {
 Route::prefix('/')->name('portal.')->group(function () {
     Route::get('/', [PortalController::class, 'index'])->name('home');
     // Các route khác của portal sẽ được thêm vào đây
+});
+Route::prefix('tin-tuc')->name('portal.news.')->group(function () {
+    Route::get('/{slug}', [PortalNewsController::class, 'show'])->name('show'); // Route xem chi tiết tin tức
+    Route::get('/chuyen-muc/{slug}', [PortalNewsController::class, 'category'])->name('category'); // Route xem tất cả tin tức theo chuyên mục
 });

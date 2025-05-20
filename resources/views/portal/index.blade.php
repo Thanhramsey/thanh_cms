@@ -2,92 +2,6 @@
 
 @section('title', 'Trang Chủ Web Hosting')
 
-@section('header')
-    <nav class="navbar navbar-top-default navbar-expand-lg navbar-simple nav-line">
-        <div class="container">
-            <a href="#slider-area" title="Logo" class="logo scroll">
-                <img src="{{ asset('portal_assets/img/logo.png') }}" title="logo" alt="logo" class="logo-default">
-            </a>
-
-            <div class="collapse navbar-collapse" id="megaone">
-                <div class="navbar-nav ml-auto">
-                    @foreach ($menus as $menu)
-                        <div class="nav-item {{ $menu->children->count() > 0 ? '' : '' }}">
-                            <a class="nav-link hvr-underline-from-left" href="{{ $menu->url }}">{{ $menu->title }}</a>
-                            @if ($menu->children->count())
-                                <div class="sub-menu">
-                                    <div class="menu-column">
-                                        @foreach ($menu->children as $child)
-                                            <a class="hvr-underline-from-left"
-                                                href="{{ $child->url }}">{{ $child->title }}</a>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            @endif
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-
-        <div class="navigation-toggle">
-            <ul class="slider-social toggle-btn my-0">
-                <li>
-                    <a href="javascript:void(0);" class="sidemenu_btn" id="sidemenu_toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="side-menu hidden">
-        <div class="inner-wrapper">
-            <span class="btn-close" id="btn_sideNavClose"><i></i><i></i></span>
-            <a href="index-web-hosting.html" title="Logo" class="logo side-logo">
-                <img src="{{ asset('portal_assets/img/side-logo.png') }}" alt="logo">
-            </a>
-            <nav class="side-nav w-100">
-                <ul class="navbar-nav side-navbar">
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#slider-area">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#about">Hosting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#prices">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#hosting">Vps Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#testimonials">Reviews</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#contact">Contact Us</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="side-footer w-100">
-                <ul class="social-icons-simple">
-                    <li><a class="social-icon" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                    <li><a class="social-icon" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                    <li><a class="social-icon" href="javascript:void(0)"><i class="fab fa-linkedin-in"></i> </a> </li>
-                    <li><a class="social-icon" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                </ul>
-                <p>© 2021 MegaOne. Made With Love by Themesindustry</p>
-            </div>
-        </div>
-    </div>
-    <a id="close_side_menu" href="javascript:void(0);"></a>
-@endsection
 
 @section('content')
     <section id="particles-js" class="p-0 position-relative">
@@ -125,8 +39,7 @@
                         {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
                     </div>
                     <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
-                        <span class="about-icon"><a href="javascript:void(0);"><i
-                                    class="las la-laptop-code"></i></a></span>
+                        <span class="about-icon"><a href="javascript:void(0);"><i class="las la-laptop-code"></i></a></span>
                         <h4 class="small-heading main-font">Dịch vụ số</h4>
                         {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
                     </div>
@@ -142,8 +55,8 @@
     <section id="about">
         <div class="container">
             <div class="row align-items-center">
-                <div class=" col-sm-12 col-md-6 img-sec mt-5 mt-md-0 wow fadeIn order-2 order-md-1"
-                    data-wow-duration="1.5s" data-wow-delay=".5s">
+                <div class=" col-sm-12 col-md-6 img-sec mt-5 mt-md-0 wow fadeIn order-2 order-md-1" data-wow-duration="1.5s"
+                    data-wow-delay=".5s">
                     <div class="blue_rectangle"></div>
                     <div class="about_img position-relative">
                         <img src="{{ asset('portal_assets/img/about-img.png') }}" alt="About Image">
@@ -204,74 +117,66 @@
     </section>
 
     <!-- Start Blog -->
-    <section class="blog-sec" id="blog">
+    <section class="blog-sec" id="news-section">
         <div class="container">
-            <!--Heading-->
             <div class="row text-center padding-bottom-half">
                 <div class="col-12 col-md-10 col-lg-8 offset-md-1 offset-lg-2 wow zoomIn heading-area"
                     data-wow-duration="1s" data-wow-delay=".1s">
-                    <h3 class="heading text-center">Our latest blogs will keep <span class="d-block">everyone
-                            updated</span></h3>
+                    <h3 class="heading text-center">Tin Tức <span class="d-block">Theo Chuyên Mục</span></h3>
                 </div>
             </div>
-            <!--Row-->
-            <div class="row wow fadeInUp">
-                <!--News Item-->
-                <div class="col-lg-4">
-                    <div class="news-item">
-                        <img alt="image" class="news-img" src="portal_assets/img/blog-img-1.jpg">
-                        <div class="news-text-box">
-                            <span class="date">October 29, 2020</span>
-                            <a href="#.">
-                                <h4 class="news-title">Web design is fun</h4>
-                            </a>
-                            <p class="para">Lorem ipsum dolor sit amet consectetur adipiscing elit ipsum dolor sit am...
-                            </p>
-                            <a class="author d-flex align-items-center" href="javascript:void(0);">
-                                <img alt="image" class="author-img bg-blue" src="portal_assets/img/blog-avatar1.png">
-                                <h5 class="author-name text-light-blue">Hena Sword</h5>
-                            </a>
+            @forelse ($newsCategories as $newsCategory)
+                @if ($newsCategory->news->isNotEmpty())
+                    <div class="mb-5">
+                        <h2>{{ $newsCategory->name }}</h2>
+                        <div class="row">
+                            @foreach ($newsCategory->news->take(3) as $newsItem)
+                                {{-- Hiển thị tối đa 3 tin tức mỗi loại --}}
+                                <div class="col-lg-4 mb-4">
+                                    <div class="news-item">
+                                        @if ($newsItem->image)
+                                            <img alt="{{ $newsItem->title }}" class="news-img"
+                                                src="{{ asset('storage/' . $newsItem->image) }}"
+                                                style="height: 200px; object-fit: cover;">
+                                        @else
+                                            <img alt="default image" class="news-img"
+                                                src="{{ asset('portal_assets/img/default-news.png') }}"
+                                                style="height: 200px; object-fit: cover;"> {{-- Ảnh mặc định nếu không có --}}
+                                        @endif
+                                        <div class="news-text-box">
+                                            <span class="date">{{ $newsItem->created_at->format('F j, Y') }}</span>
+                                            <a href="{{ route('portal.news.show', $newsItem->slug) }}">
+                                                <h4 class="news-title">{{ $newsItem->title }}</h4>
+                                            </a>
+                                            <p class="para">{{ Str::limit($newsItem->excerpt, 100) }}</p>
+                                            <a class="author d-flex align-items-center" href="javascript:void(0);">
+                                                {{-- Bạn có thể hiển thị thông tin tác giả nếu có --}}
+                                                <div class="author-info">
+                                                    <h5 class="author-name text-light-blue">Admin</h5>
+                                                </div>
+                                            </a>
+                                            <div class="mt-2">
+                                                <a href="{{ route('portal.news.show', $newsItem->slug) }}"
+                                                    class="btn btn-info btn-sm">Đọc thêm</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            @if ($newsCategory->news->count() > 3)
+                                <div class="col-12 text-center mt-3">
+                                    <a href="{{ route('portal.news.category', $newsCategory->slug) }}"
+                                        class="btn btn-outline-info">Xem Thêm Tin Tức {{ $newsCategory->name }}</a>
+                                </div>
+                            @endif
                         </div>
                     </div>
+                @endif
+            @empty
+                <div class="col-12 text-center">
+                    <p>Chưa có tin tức nào.</p>
                 </div>
-                <!--News Item-->
-                <div class="col-lg-4">
-                    <div class="news-item">
-                        <img alt="image" class="news-img" src="portal_assets/img/blog-img-2.jpg">
-                        <div class="news-text-box">
-                            <span class="date">October 29, 2020</span>
-                            <a href="#.">
-                                <h4 class="news-title">Future of websites</h4>
-                            </a>
-                            <p class="para">Lorem ipsum dolor sit amet consectetur adipiscing elit ipsum dolor sit am...
-                            </p>
-                            <a class="author d-flex align-items-center" href="javascript:void(0);">
-                                <img alt="image" class="author-img bg-purple"
-                                    src="portal_assets/img/blog-avatar2.png">
-                                <h5 class="author-name text-light-blue">Teena Walker</h5>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!--News Item-->
-                <div class="col-lg-4">
-                    <div class="news-item">
-                        <img alt="image" class="news-img" src="portal_assets/img/blog-img-3.jpg">
-                        <div class="news-text-box">
-                            <span class="date">October 29, 2020</span>
-                            <a href="#.">
-                                <h4 class="news-title">Digital marketing</h4>
-                            </a>
-                            <p class="para">Lorem ipsum dolor sit amet consectetur adipiscing elit ipsum dolor sit am...
-                            </p>
-                            <a class="author d-flex align-items-center" href="javascript:void(0);">
-                                <img alt="image" class="author-img bg-pink" src="portal_assets/img/blog-avatar3.png">
-                                <h5 class="author-name text-light-blue">David Villas</h5>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforelse
         </div>
     </section>
     <!-- End Blog -->
@@ -311,37 +216,4 @@
             </div>
         </div>
     </section>
-@endsection
-@section('footer')
-    <footer class="footer">
-        <div class="container">
-            <div class="row align-items-center">
-                <!--Social-->
-                <div class="col-12">
-                    <div class="footer-social text-center">
-                        <ul class="list-unstyled">
-                            <li><a class="wow fadeInUp" href="javascript:void(0);"><i aria-hidden="true"
-                                        class="fab fa-facebook-f"></i><span></span></a></li>
-                            <li><a class="wow fadeInDown" href="javascript:void(0);"><i aria-hidden="true"
-                                        class="fab fa-twitter"></i><span></span></a></li>
-                            <li><a class="wow fadeInUp" href="javascript:void(0);"><i aria-hidden="true"
-                                        class="fab fa-google-plus-g"></i><span></span></a></li>
-                            <li><a class="wow fadeInDown" href="javascript:void(0);"><i aria-hidden="true"
-                                        class="fab fa-linkedin-in"></i><span></span></a></li>
-                            <li><a class="wow fadeInUp" href="javascript:void(0);"><i aria-hidden="true"
-                                        class="fab fa-instagram"></i><span></span></a></li>
-                            <li><a class="wow fadeInDown" href="javascript:void(0);"><i aria-hidden="true"
-                                        class="fab fa-pinterest-p"></i><span></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--Text-->
-                <div class="col-12 text-center mt-3">
-                    <p class="company-about fadeIn">© 2021 MegaOne. Made With Love By <a
-                            href="javascript:void(0);">Themesindustry</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
 @endsection

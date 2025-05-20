@@ -16,6 +16,7 @@ class News extends Model
         'summary',
         'content',
         'image',
+        'type_id',
         'is_published',
         'published_at',
         'user_id',
