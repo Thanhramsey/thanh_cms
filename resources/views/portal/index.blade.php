@@ -4,7 +4,7 @@
 
 
 @section('content')
-    <section id="particles-js" class="p-0 position-relative">
+    <section id="particles-js" class="position-relative">
         <div class="slider-area" id="slider-area">
             <div class="container">
                 <div class="row align-items-center">
@@ -98,8 +98,8 @@
                                                     alt="{{ $product->name }}" style="max-width: 100px;">
                                             @endif
                                             <p>{{ $product->description }}</p>
-                                            <a href="{{ $product->link ?? '#' }}" class="btn btn-primary">Xem chi
-                                                tiết</a>
+                                            <a href="{{ route('portal.product.show', $product->slug) }}"
+                                                class="btn btn-primary btn-sm">Xem chi tiết</a>
                                         </div>
                                     </div>
                                 @endforeach
@@ -107,6 +107,11 @@
                             <div class="swiper-pagination"></div>
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-button-next"></div>
+                            <div class="col-12 text-center mt-3">
+                                <h2><a
+                                        href="{{ route('portal.product.category', $category->slug) }}">{{ $category->name }}</a>
+                                </h2>
+                            </div>
                         </div>
                     @else
                         <p>Không có sản phẩm nào thuộc danh mục này.</p>
@@ -122,7 +127,7 @@
             <div class="row text-center padding-bottom-half">
                 <div class="col-12 col-md-10 col-lg-8 offset-md-1 offset-lg-2 wow zoomIn heading-area"
                     data-wow-duration="1s" data-wow-delay=".1s">
-                    <h3 class="heading text-center">Tin Tức <span class="d-block">Theo Chuyên Mục</span></h3>
+                    <h3 class="heading text-center">Tin Tức <span class="d-block"></span></h3>
                 </div>
             </div>
             @forelse ($newsCategories as $newsCategory)

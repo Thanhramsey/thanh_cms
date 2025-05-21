@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\PortalNewsController;
+use App\Http\Controllers\PortalProductController;
+
 use \UniSharp\LaravelFilemanager\Lfm;
 
 // Authentication Routes
@@ -56,4 +58,9 @@ Route::prefix('/')->name('portal.')->group(function () {
 Route::prefix('tin-tuc')->name('portal.news.')->group(function () {
     Route::get('/{slug}', [PortalNewsController::class, 'show'])->name('show'); // Route xem chi tiết tin tức
     Route::get('/chuyen-muc/{slug}', [PortalNewsController::class, 'category'])->name('category'); // Route xem tất cả tin tức theo chuyên mục
+});
+
+Route::prefix('san-pham')->name('portal.product.')->group(function () {
+    Route::get('/{slug}', [PortalProductController::class, 'show'])->name('show'); // Trang chi tiết sản phẩm
+    Route::get('/danh-muc/{slug}', [PortalProductController::class, 'category'])->name('category'); // Trang danh sách sản phẩm theo danh mục
 });
