@@ -1,6 +1,6 @@
 <nav class="navbar navbar-top-default navbar-expand-lg navbar-simple nav-line">
     <div class="container">
-        <a href="#slider-area" title="Logo" class="logo scroll">
+        <a href="{{ route('portal.home') }}" title="Logo" class="logo">
             <img src="{{ asset('portal_assets/img/logo.png') }}" title="logo" alt="logo" class="logo-default">
         </a>
 

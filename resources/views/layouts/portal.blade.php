@@ -68,9 +68,11 @@
     <script src="{{ asset('portal_assets/js/particles.min.js') }}"></script>
     <script src="{{ asset('portal_assets/vendor/js/contact_us.js') }}"></script>
     <script src="{{ asset('portal_assets/js/circle-progress.min.js') }}"></script>
-    <script src="{{ asset('portal_assets/js/script.js') }}"></script>
+
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="{{ asset('portal_assets/js/script.js') }}"></script>
+
 </body>
 
 </html>

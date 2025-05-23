@@ -9,7 +9,14 @@ section#product-list {
     color: black;
     font-weight: bold;
 }
-
+#product-list h5{
+    color: black;
+    font-weight: normal;
+}
+#product-list h5 a:hover {
+    color: #00b7ff;
+    font-weight: bold;
+}
 .swiper {
     width: 100%;
     height: auto;
@@ -209,3 +216,69 @@ h2 {
     .news-detail .list-unstyled li a:hover {
         color: #007bff;
     }
+section#home-banner  {
+    padding: 0 !important;
+}
+#home-banner.slider-img .author-skills.bg-blue {
+    position: relative;
+}
+
+#home-banner .owl-carousel .slide img.img-fluid.w-100 {
+    display: block; /* Đảm bảo ảnh hiển thị như một block */
+    width: 100%;    /* Chiều rộng 100% của phần tử cha */
+    height: auto;   /* Chiều cao tự động để giữ tỷ lệ khung hình */
+    object-fit: cover; /* Lấp đầy container, có thể crop ảnh */
+    min-height: 300px; /* Đặt chiều cao tối thiểu, điều chỉnh theo ý muốn */
+    max-height: 700px; /* Đặt chiều cao tối đa, điều chỉnh theo ý muốn */
+}
+
+#home-banner .owl-carousel {
+    position: relative; /* Để định vị các nút điều hướng */
+}
+
+#home-banner .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px; /* Khoảng cách từ cạnh */
+}
+
+#home-banner .owl-nav button.owl-prev,
+#home-banner .owl-nav button.owl-next {
+    background: rgba(0, 0, 0, 0.5) !important; /* Nền trong suốt */
+    color: #fff !important;
+    font-size: 2rem !important;
+    padding: 5px 15px !important;
+    border-radius: 5px !important;
+    margin: 0 10px;
+}
+
+#home-banner .owl-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+#home-banner .owl-dots .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+#home-banner .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    border-radius: 50%;
+}
+
+#home-banner .owl-dots .owl-dot.active span {
+    background: #007bff; /* Màu dot active */
+}

@@ -4,54 +4,7 @@
 
 
 @section('content')
-    <section id="particles-js" class="position-relative">
-        <div class="slider-area" id="slider-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-6 col-lg-6 text-md-center text-lg-left wow fadeInLeft content-margin"
-                        data-wow-duration="1.5s" data-wow-delay="1.2s">
-                        <div class="area-heading text-center text-lg-left">
-                            <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG BẠN ĐẾN VỚI <span
-                                    class="d-block">VNPT GIA LAI</span></h1>
-                            <p class="text-white alt-font mb-5">Là thành viên của Tập đoàn Bưu chính Viễn thông Việt Nam
-                                (VNPT). VNPT Gia Lai tự hào là nhà cung cấp hàng đầu các sản phẩm dịch vụ viễn thông - công
-                                nghệ thông tin toàn diện cho cá nhân và tổ chức doanh nghiệp.</p>
-                            <a href="#about" class="scroll btn btn-medium btn-rounded btn-trans-white mb-5">GET STARTED
-                                NOW</a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6 text-right image-order wow fadeInRight" data-wow-duration="1.5s"
-                        data-wow-delay="1.2s">
-                        <div class="slider-image">
-                            <img src="{{ asset('portal_assets/img/banner-img.png') }}" alt="Slider-Image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="author-skills bg-blue">
-            <div class="container">
-                <div class="row text-center text-lg-left">
-                    <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.2s">
-                        <span class="about-icon"><a href="javascript:void(0);"><i
-                                    class="la la-broadcast-tower"></i></a></span>
-                        <h4 class="small-heading main-font">Dịch vụ viễn thông</h4>
-                        {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
-                    </div>
-                    <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
-                        <span class="about-icon"><a href="javascript:void(0);"><i class="las la-laptop-code"></i></a></span>
-                        <h4 class="small-heading main-font">Dịch vụ số</h4>
-                        {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
-                    </div>
-                    <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.8s">
-                        <span class="about-icon"><a href="javascript:void(0);"><i class="las la-city"></i></a></span>
-                        <h4 class="small-heading main-font">Hệ sinh thái chuyển đổi số</h4>
-                        {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('portal.module.banner')
     <section id="about">
         <div class="container">
             <div class="row align-items-center">
@@ -77,41 +30,34 @@
                             doanh nghiệp và chính phủ.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
+
     <section id="product-list">
         <div class="container">
             @foreach ($productCategories as $category)
                 <div id="{{ Str::slug($category->name) }}" class="mb-5">
                     <h2>{{ $category->name }}</h2>
                     @if ($category->products->isNotEmpty())
-                        <div class="swiper category-products-{{ $category->id }}">
-                            <div class="swiper-wrapper">
-                                @foreach ($category->products as $product)
-                                    <div class="swiper-slide">
-                                        <div class="product-item">
-                                            <h3>{{ $product->name }}</h3>
-                                            @if ($product->image)
-                                                <img src="{{ asset('storage/' . $product->image) }}"
-                                                    alt="{{ $product->name }}" style="max-width: 100px;">
-                                            @endif
-                                            <p>{{ $product->description }}</p>
-                                            <a href="{{ route('portal.product.show', $product->slug) }}"
-                                                class="btn btn-primary btn-sm">Xem chi tiết</a>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                            <div class="col-12 text-center mt-3">
-                                <h2><a
-                                        href="{{ route('portal.product.category', $category->slug) }}">{{ $category->name }}</a>
-                                </h2>
-                            </div>
+                        <div class="owl-carousel category-products-{{ $category->id }}">
+                            @foreach ($category->products as $product)
+                                <div class="product-item">
+                                    <h3>{{ $product->name }}</h3>
+                                    @if ($product->image)
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                                            style="max-width: 100px;">
+                                    @endif
+                                    <p>{{ Str::limit($product->description, 50) }}</p>
+                                    <a href="{{ route('portal.product.show', $product->slug) }}"
+                                        class="btn btn-primary btn-sm">Xem chi tiết</a>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="col-12 text-right mt-3">
+                            <h5>
+                                <a href="{{ route('portal.product.category', $category->slug) }}">Xem Thêm >></a>
+                            </h5>
                         </div>
                     @else
                         <p>Không có sản phẩm nào thuộc danh mục này.</p>
@@ -119,6 +65,8 @@
                 </div>
             @endforeach
         </div>
+
+
     </section>
 
     <!-- Start Blog -->
@@ -204,8 +152,7 @@
                             <form class="row contact-form row-padding" id="contact-form-data">
                                 <div class="col-12">
                                     <input type="text" name="userName" placeholder="Name" class="form-control">
-                                    <input type="text" name="userPhone" placeholder="Contact No"
-                                        class="form-control">
+                                    <input type="text" name="userPhone" placeholder="Contact No" class="form-control">
                                     <input type="email" name="userEmail" placeholder="Email" class="form-control">
                                 </div>
                             </form>
