@@ -1,7 +1,8 @@
 <nav class="navbar navbar-top-default navbar-expand-lg navbar-simple nav-line">
     <div class="container">
         <a href="{{ route('portal.home') }}" title="Logo" class="logo">
-            <img src="{{ asset('portal_assets/img/logo.png') }}" title="logo" alt="logo" class="logo-default">
+            {{-- <img src="{{ asset('portal_assets/img/logo.png') }}" title="logo" alt="logo" class="logo-default"> --}}
+            <img src="{{ asset($logo->value) }}" title="logo" alt="logo" class="logo-default">
         </a>
 
         <div class="collapse navbar-collapse" id="megaone">

@@ -7,6 +7,7 @@ use App\Models\ProductCategory;
 use App\Models\Category;
 use App\Models\Banner;
 use App\Models\Image;
+use App\Models\Config;
 
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class PortalController extends Controller
         $newsCategories = Category::where('module', 'news')->where('active', 1)->with('news')->get();
         $bannerSettings = Banner::where('is_active', true)->first();
         $bannerImages = Image::where('group', 1)->get();
+        $logo = Config::where('key', 'logo_path')->first();
         
-        return view('portal.index', compact('menus', 'productCategories', 'newsCategories', 'bannerSettings', 'bannerImages'));
+        return view('portal.index', compact('menus', 'productCategories', 'newsCategories', 'bannerSettings', 'bannerImages','logo'));
     }
 }
