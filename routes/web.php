@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\PortalNewsController;
 use App\Http\Controllers\PortalProductController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\ConfigController;
 
 use \UniSharp\LaravelFilemanager\Lfm;
 
@@ -46,6 +47,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('productCategories', ProductCategoryController::class);
         Route::resource('products', ProductController::class);
         Route::resource('banners', BannerController::class);
+        Route::resource('configs', ConfigController::class);
         Route::post('/news/upload-image', [NewsController::class, 'uploadImage'])->name('news.upload_image');
         Route::post('/news/upload-media', [NewsController::class, 'uploadMedia'])->name('news.upload_media');
         // Các route admin khác
