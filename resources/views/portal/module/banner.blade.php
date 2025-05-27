@@ -42,36 +42,38 @@
              </div>
          @else
              {{-- Hiển thị banner mặc định hoặc không hiển thị gì nếu không có cài đặt --}}
-             <div id="particles-js" class="slider-area">
-                 <div class="container">
-                     <div class="row align-items-center">
-                         <div class="col-12 col-md-6 col-lg-6 text-md-center text-lg-left wow fadeInLeft content-margin"
-                             data-wow-duration="1.5s" data-wow-delay="1.2s">
-                             <div class="area-heading text-center text-lg-left">
-                                 <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG BẠN ĐẾN VỚI <span
-                                         class="d-block">VNPT GIA LAI</span></h1>
-                                 <p class="text-white alt-font mb-5">Là thành viên của Tập đoàn Bưu chính Viễn thông
-                                     Việt
-                                     Nam
-                                     (VNPT). VNPT Gia Lai tự hào là nhà cung cấp hàng đầu các sản phẩm dịch vụ viễn
-                                     thông
-                                     -
-                                     công
-                                     nghệ thông tin toàn diện cho cá nhân và tổ chức doanh nghiệp.</p>
-                                 <a href="#about" class="scroll btn btn-medium btn-rounded btn-trans-white mb-5">GET
-                                     STARTED
-                                     NOW</a>
+             <section id="particles-js" class="position-relative">
+                 <div id="home-banner" class="slider-area">
+                     <div class="container">
+                         <div class="row align-items-center">
+                             <div class="col-12 col-md-6 col-lg-6 text-md-center text-lg-left wow fadeInLeft content-margin"
+                                 data-wow-duration="1.5s" data-wow-delay="1.2s">
+                                 <div class="area-heading text-center text-lg-left">
+                                     <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG BẠN ĐẾN VỚI <span
+                                             class="d-block">VNPT GIA LAI</span></h1>
+                                     <p class="text-white alt-font mb-5">Là thành viên của Tập đoàn Bưu chính Viễn thông
+                                         Việt
+                                         Nam
+                                         (VNPT). VNPT Gia Lai tự hào là nhà cung cấp hàng đầu các sản phẩm dịch vụ viễn
+                                         thông
+                                         -
+                                         công
+                                         nghệ thông tin toàn diện cho cá nhân và tổ chức doanh nghiệp.</p>
+                                     <a href="#about"
+                                         class="scroll btn btn-medium btn-rounded btn-trans-white mb-5">GET
+                                         STARTED
+                                         NOW</a>
+                                 </div>
                              </div>
-                         </div>
-                         <div class="col-12 col-md-6 col-lg-6 text-right image-order wow fadeInRight"
-                             data-wow-duration="1.5s" data-wow-delay="1.2s">
-                             <div class="slider-image">
-                                 <img src="{{ asset('portal_assets/img/banner-img.png') }}" alt="Slider-Image">
+                             <div class="col-12 col-md-6 col-lg-6 text-right image-order wow fadeInRight"
+                                 data-wow-duration="1.5s" data-wow-delay="1.2s">
+                                 <div class="slider-image">
+                                     <img src="{{ asset('portal_assets/img/banner-img.png') }}" alt="Slider-Image">
+                                 </div>
                              </div>
                          </div>
                      </div>
                  </div>
-             </div>
  @endif
  <div class="author-skills bg-blue">
      <div class="container">
