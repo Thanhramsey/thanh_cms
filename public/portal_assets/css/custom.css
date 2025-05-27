@@ -282,3 +282,34 @@ section#home-banner  {
 #home-banner .owl-dots .owl-dot.active span {
     background: #007bff; /* Màu dot active */
 }
+
+#result {
+    background-color: rgba(255, 255, 255, 0.8); /* Nền trắng mờ */
+    color: #333; /* Chữ màu đen hoặc xám đậm */
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 20px ;
+}
+
+#result.success {
+    background-color: rgba(144, 238, 144, 0.8); /* Xanh lá cây nhạt cho thành công */
+    color: #228B22; /* Xanh lá cây đậm cho chữ thành công */
+}
+
+#result.error {
+    background-color: rgba(255, 99, 71, 0.8); /* Đỏ nhạt cho lỗi */
+    color: #8B0000; /* Đỏ đậm cho chữ lỗi */
+}
+
+#result.hidden {
+    display: none;
+}
+.card-detail{
+    padding: 20px;
+    color: #0056b3;
+}
+/* .card-detail p,.card-detail label{
+    color: #0056b3;
+} */

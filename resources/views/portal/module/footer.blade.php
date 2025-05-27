@@ -22,8 +22,7 @@
             </div>
             <!--Text-->
             <div class="col-12 text-center mt-3">
-                <p class="company-about fadeIn">© 2021 MegaOne. Made With Love By <a
-                        href="javascript:void(0);">Themesindustry</a>
+                <p class="company-about fadeIn">© 2025 VNPT<a href="javascript:void(0);"></a>
                 </p>
             </div>
         </div>

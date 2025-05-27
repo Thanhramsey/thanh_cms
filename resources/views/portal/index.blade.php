@@ -135,7 +135,8 @@
     <!-- End Blog -->
 
     <!-- Start Contact -->
-    <section class="contact-sec" id="contact">
+    @include('portal.module.contact')
+    {{-- <section class="contact-sec" id="contact">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-3 text-center">
@@ -167,5 +168,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

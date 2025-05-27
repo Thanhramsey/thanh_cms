@@ -16,6 +16,8 @@ use App\Http\Controllers\PortalNewsController;
 use App\Http\Controllers\PortalProductController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ConfigController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\PortalContactController;
 
 use \UniSharp\LaravelFilemanager\Lfm;
 
@@ -48,6 +50,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('products', ProductController::class);
         Route::resource('banners', BannerController::class);
         Route::resource('configs', ConfigController::class);
+        Route::resource('contacts', ContactController::class)->only(['index', 'show', 'update', 'destroy']);
         Route::post('/news/upload-image', [NewsController::class, 'uploadImage'])->name('news.upload_image');
         Route::post('/news/upload-media', [NewsController::class, 'uploadMedia'])->name('news.upload_media');
         // Các route admin khác
@@ -68,3 +71,7 @@ Route::prefix('san-pham')->name('portal.product.')->group(function () {
     Route::get('/{slug}', [PortalProductController::class, 'show'])->name('show'); // Trang chi tiết sản phẩm
     Route::get('/danh-muc/{slug}', [PortalProductController::class, 'category'])->name('category'); // Trang danh sách sản phẩm theo danh mục
 });
+
+Route::post('/contact', [PortalContactController::class, 'store'])->name('portal.contact.store');
+Route::get('/find-contact', [PortalContactController::class, 'showFindForm'])->name('portal.contact.find.form');
+Route::post('/find-contact', [PortalContactController::class, 'findContact'])->name('portal.contact.find');
