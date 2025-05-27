@@ -57,7 +57,10 @@
         <header>
             @include('portal.module.footer')
         </header>
-
+        <button id="scrollTopBtn" class="btn btn-primary rounded-circle shadow-sm"
+            style="position: fixed; bottom: 20px; right: 20px; display: none;">
+            <i class="fa fa-arrow-up"></i>
+        </button>
     </div>
 
     <script src="{{ asset('portal_assets/vendor/js/bundle.min.js') }}"></script>

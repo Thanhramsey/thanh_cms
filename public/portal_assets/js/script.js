@@ -36,6 +36,22 @@ $(window).on('scroll', function () {
         $('.scroll-top-arrow').fadeOut('slow');
 });
 
+ const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollTopBtn.style.display = "block";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+    }
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
 //Click event to scroll to top
 $(document).on('click', '.scroll-top-arrow', function () {
     $('html, body').animate({scrollTop: 0}, 800);
@@ -154,3 +170,7 @@ $('.owl-carousel.home-slider').owlCarousel({
             });
                     
 });
+
+
+
+   
