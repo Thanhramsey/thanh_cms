@@ -2,7 +2,12 @@
     <div class="container">
         <a href="{{ route('portal.home') }}" title="Logo" class="logo">
             {{-- <img src="{{ asset('portal_assets/img/logo.png') }}" title="logo" alt="logo" class="logo-default"> --}}
-            <img src="{{ asset($logo->value) }}" title="logo" alt="logo" class="logo-default">
+            @if ($logo && $logo->value)
+                <img src="{{ asset($logo->value) }}" title="logo" alt="logo" class="logo-default">
+            @else
+                <img src="{{ asset('portal_assets/img/default-logo.png') }}" title="default-logo" alt="default-logo"
+                    class="logo-default">
+            @endif
         </a>
 
         <div class="collapse navbar-collapse" id="megaone">

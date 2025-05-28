@@ -2,8 +2,13 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-3 text-center">
-                <div class="user-img"> <img src="{{ asset($logo->value) }}" title="logo" alt="logo"
-                        class="logo-default">
+                <div class="user-img">
+                    @if ($logo && $logo->value)
+                        <img src="{{ asset($logo->value) }}" title="logo" alt="logo" class="logo-default">
+                    @else
+                        <img src="{{ asset('portal_assets/img/default-logo.png') }}" title="default-logo"
+                            alt="default-logo" class="logo-default">
+                    @endif
                 </div>
                 <h4 class="user-name">MegaOne Hosts</h4>
                 <p class="user-designation">email@website.com</p>

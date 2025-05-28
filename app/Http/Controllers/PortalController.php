@@ -19,11 +19,12 @@ class PortalController extends Controller
             ->orderBy('order')
             ->with('children')
             ->get();
+        $logo = Config::where('key', 'logo_path')->first();
         $productCategories = ProductCategory::with('products')->where('is_active', true)->get();
         $newsCategories = Category::where('module', 'news')->where('active', 1)->with('news')->get();
         $bannerSettings = Banner::where('is_active', true)->first();
         $bannerImages = Image::where('group', 1)->get();
-        $logo = Config::where('key', 'logo_path')->first();
+        
         
         return view('portal.index', compact('menus', 'productCategories', 'newsCategories', 'bannerSettings', 'bannerImages','logo'));
     }

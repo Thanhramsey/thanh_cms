@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category; // Nếu bạn dùng bảng categories cho danh mục sản phẩm
 use App\Models\Product;
 use App\Models\Menu;
+use App\Models\Config;
 use App\Models\ProductCategory; // Nếu bạn vẫn dùng bảng product_categories
 use Illuminate\View\View;
 
@@ -17,8 +18,9 @@ class PortalProductController extends Controller
             ->orderBy('order')
             ->with('children')
             ->get();
+        $logo = Config::where('key', 'logo_path')->first();
         $product = Product::where('slug', $slug)->where('is_active', true)->firstOrFail();
-        return view('portal.product.show', compact('product','menus'));
+        return view('portal.product.show', compact('product','menus','logo'));
     }
 
     public function category(string $slug): View
@@ -27,9 +29,10 @@ class PortalProductController extends Controller
             ->orderBy('order')
             ->with('children')
             ->get();
+             $logo = Config::where('key', 'logo_path')->first();
         $category = ProductCategory::where('slug', $slug)->where('is_active', true)->firstOrFail();
         $products = Product::where('category_id', $category->id)->where('is_active', true)->paginate(9);
 
-        return view('portal.product.category', compact('category', 'products','menus'));
+        return view('portal.product.category', compact('category', 'products','menus','logo'));
     }
 }
