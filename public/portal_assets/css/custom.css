@@ -338,3 +338,38 @@ section#home-banner  {
 .page-content{
     color: black;
 }
+
+.footer{
+    color: #0056b3;
+    background-image: url('/portal_assets/img/banner_footer.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+}
+
+.featured-news .news-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff; /* Màu xanh dương nổi bật */
+}
+
+.blog-sec .list-unstyled li{
+    border-bottom: 1px dotted black;
+}
+
+.blog-sec h2 {
+    font-size: 2rem; /* Lớn hơn */
+    color: #007bff; /* Màu xanh dương */
+    font-weight: bold; /* In đậm */
+    margin-bottom: 1.5rem; /* Thêm khoảng cách dưới tiêu đề */
+    text-align: left; /* Căn trái (mặc định) */
+}
+
+.news-category-box {
+    background-color: #f4f8ff; /* Màu nền bạn muốn */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow nhẹ */
+    padding: 20px; /* Thêm padding bên trong box */
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các box */
+}

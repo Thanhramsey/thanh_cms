@@ -30,4 +30,10 @@ class News extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function categoryName()
+    {
+        $category = Category::find($this->type_id);
+        return $category ? $category->name : 'Không xác định';
+    }
+
 }

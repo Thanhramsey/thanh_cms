@@ -28,12 +28,7 @@ class Image extends Model
     }
     public function categoryName()
     {
-        // Chú ý: Cần đảm bảo bảng `categories` có cột `id` và `name`
-        // và bạn có một cách để liên kết `group` với `id` của `category`.
-        // Ví dụ, nếu `group` trực tiếp tương ứng với `id` của category:
         $category = Category::find($this->group);
         return $category ? $category->name : 'Không xác định';
-
-        // Nếu có một logic phức tạp hơn để liên kết, bạn cần điều chỉnh ở đây.
     }
 }

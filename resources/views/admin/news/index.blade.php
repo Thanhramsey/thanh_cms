@@ -13,6 +13,7 @@
             <thead class="thead-light">
                 <tr>
                     <th style="width: 50px;">ID</th>
+                    <th style="width: 100px;">Loại tin</th>
                     <th style="width: 200px;">Tiêu đề</th>
                     <th style="width: 250px;">Tóm tắt</th>
                     <th style="width: 150px;">Ngày đăng</th>
@@ -25,6 +26,7 @@
                 @forelse ($news as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
+                        <td>{{ $item->categoryName() }}</td>
                         <td class="text-wrap">{{ \Str::limit($item->title, 100) }}</td>
                         <td class="text-wrap">{{ \Str::limit($item->summary, 100) }}</td>
                         <td>
