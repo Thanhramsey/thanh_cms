@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Models\Banner;
 use App\Models\Image;
 use App\Models\Config;
+use App\Models\News;
+use Illuminate\View\View;
 
 use Illuminate\Http\Request;
 
@@ -28,4 +30,48 @@ class PortalController extends Controller
         
         return view('portal.index', compact('menus', 'productCategories', 'newsCategories', 'bannerSettings', 'bannerImages','logo'));
     }
+
+    public function gioiThieu(): View
+    {
+         $menus = Menu::whereNull('parent_id')
+            ->orderBy('order')
+            ->with('children')
+            ->get();
+        $logo = Config::where('key', 'logo_path')->first();
+        $gioiThieuNews = News::where('slug', 'tin-gioi-thieu')->firstOrFail();
+        return view('portal.page.gioi-thieu', compact('gioiThieuNews','menus','logo'));
+    }
+    public function coCauToChuc(): View
+    {
+         $menus = Menu::whereNull('parent_id')
+            ->orderBy('order')
+            ->with('children')
+            ->get();
+        $logo = Config::where('key', 'logo_path')->first();
+        $coCauToChuc = News::where('slug', 'co-cau-to-chuc')->firstOrFail();
+        return view('portal.page.co-cau-to-chuc', compact('coCauToChuc','menus','logo'));
+    }
+    public function danhSachNhanVien(): View
+    {
+         $menus = Menu::whereNull('parent_id')
+            ->orderBy('order')
+            ->with('children')
+            ->get();
+        $logo = Config::where('key', 'logo_path')->first();
+        $gioiThieuNews = News::where('slug', 'danh-sach-nhan-vien')->firstOrFail();
+        return view('portal.page.danhsachnhanvien', compact('gioiThieuNews','menus','logo'));
+    }
+
+     public function lienHe(): View
+    {
+         $menus = Menu::whereNull('parent_id')
+            ->orderBy('order')
+            ->with('children')
+            ->get();
+        $logo = Config::where('key', 'logo_path')->first();
+        
+        $gioiThieuNews = News::where('slug', 'danh-sach-nhan-vien')->firstOrFail();
+        return view('portal.page.lienhe', compact('gioiThieuNews','menus','logo'));
+    }
+
 }

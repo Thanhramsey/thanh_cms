@@ -116,7 +116,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                            @if ($newsCategory->news->count() > 3)
+                            @if ($newsCategory->news->count() > 1)
                                 <div class="col-12 text-center mt-3">
                                     <a href="{{ route('portal.news.category', $newsCategory->slug) }}"
                                         class="btn btn-outline-info">Xem Thêm Tin Tức {{ $newsCategory->name }}</a>

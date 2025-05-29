@@ -74,4 +74,11 @@ Route::prefix('san-pham')->name('portal.product.')->group(function () {
 
 Route::post('/contact', [PortalContactController::class, 'store'])->name('portal.contact.store');
 Route::get('/find-contact', [PortalContactController::class, 'showFindForm'])->name('portal.contact.find.form');
-Route::post('/find-contact', [PortalContactController::class, 'findContact'])->name('portal.contact.find');
+Route::get('/find-contact', [PortalContactController::class, 'showFindForm'])->name('portal.contact.find.form');
+Route::get('/lien-he', [PortalController::class, 'lienHe'])->name('portal.page.lienhe');
+Route::get('/gioi-thieu', [PortalController::class, 'gioiThieu'])->name('portal.page.gioi-thieu');
+Route::get('/co-cau-to-chuc', [PortalController::class, 'coCauToChuc'])->name('portal.page.co-cau-to-chuc');
+Route::get('/danh-sach-nhan-vien', [PortalController::class, 'danhSachNhanVien'])->name('portal.page.danhsachnhanvien');
+
+Route::get('/tin-noi-bo', [PortalNewsController::class, 'category'])->name('portal.news.noi-bo')->defaults('slug', 'tin-noi-bo');
+Route::get('/kien-thuc-y-khoa', [PortalNewsController::class, 'category'])->name('portal.news.noi-bo')->defaults('slug', 'kien-thuc-y-khoa');

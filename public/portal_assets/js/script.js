@@ -35,7 +35,6 @@ $(window).on('scroll', function () {
     else
         $('.scroll-top-arrow').fadeOut('slow');
 });
-
  const scrollTopBtn = document.getElementById("scrollTopBtn");
 
     window.onscroll = function() {scrollFunction()};
