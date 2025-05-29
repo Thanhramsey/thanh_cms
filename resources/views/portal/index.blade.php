@@ -72,89 +72,109 @@
     <!-- Start Blog -->
     <section class="blog-sec" id="news-section">
         <div class="container">
-            <div class="cols-12 col-xl-9">
-                @forelse ($newsCategories as $newsCategory)
-                    @if ($newsCategory->news->isNotEmpty())
-                        <div class="mb-5 wow zoomIn news-category-box" data-wow-duration="1s" data-wow-delay=".1s">
-                            <h2>{{ $newsCategory->name }}</h2>
-                            <div class="row">
-                                @if ($newsCategory->news->isNotEmpty())
-                                    @php
-                                        $featuredNews = $newsCategory->news->first(); // Lấy tin đầu tiên làm nổi bật
-                                        $remainingNews = $newsCategory->news->skip(1)->take(5); // Lấy các tin còn lại (tối đa 5)
-                                    @endphp
-                                    <div class="col-lg-6">
-                                        @if ($featuredNews)
-                                            <div class="news-item featured-news">
-                                                @if ($featuredNews->image)
-                                                    <img alt="{{ $featuredNews->title }}" class="news-img w-100"
-                                                        src="{{ asset('storage/' . $featuredNews->image) }}"
-                                                        style="object-fit: cover; max-height: 400px;">
-                                                @else
-                                                    <img alt="default image" class="news-img w-100"
-                                                        src="{{ asset('portal_assets/img/default-news.png') }}"
-                                                        style="object-fit: cover; max-height: 400px;">
-                                                @endif
-                                                <div class="news-text-box mt-3">
-                                                    <span
-                                                        class="date">{{ $featuredNews->created_at->format('F j, Y') }}</span>
-                                                    <a href="{{ route('portal.news.show', $featuredNews->slug) }}">
-                                                        <h4 class="news-title">{{ $featuredNews->title }}</h4>
-                                                    </a>
-                                                    <p class="para">{{ Str::limit($featuredNews->excerpt, 150) }}</p>
-                                                    <a href="{{ route('portal.news.show', $featuredNews->slug) }}"
-                                                        class="btn btn-info btn-sm">Đọc thêm</a>
-                                                </div>
-                                            </div>
-                                        @endif
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <ul class="list-unstyled">
-                                            @forelse ($remainingNews as $news)
-                                                <li class="mb-3">
-                                                    <div class="d-flex align-items-center">
-                                                        @if ($news->image)
-                                                            <img src="{{ asset('storage/' . $news->image) }}"
-                                                                alt="{{ $news->title }}"
-                                                                style="width: 80px; height: 60px; object-fit: cover;margin-right:10px"
-                                                                class="me-3">
-                                                        @else
-                                                            <img src="{{ asset('portal_assets/img/default-news-small.png') }}"
-                                                                alt="default"
-                                                                style="width: 80px; height: 60px; object-fit: cover;margin-right:10px"
-                                                                class="me-3">
-                                                        @endif
-                                                        <div>
-                                                            <a href="{{ route('portal.news.show', $news->slug) }}"
-                                                                class="text-dark stretched-link">{{ $news->title }}</a>
-                                                            <small
-                                                                class="text-muted d-block">{{ $news->created_at->format('M d, Y') }}</small>
-                                                        </div>
+            <div class="row">
+                <div class="cols-12 col-xl-9">
+                    @forelse ($newsCategories as $newsCategory)
+                        @if ($newsCategory->news->isNotEmpty())
+                            <div class="mb-5 wow zoomIn news-category-box" data-wow-duration="1s" data-wow-delay=".1s">
+                                <h2>{{ $newsCategory->name }}</h2>
+                                <div class="row">
+                                    @if ($newsCategory->news->isNotEmpty())
+                                        @php
+                                            $featuredNews = $newsCategory->news->first(); // Lấy tin đầu tiên làm nổi bật
+                                            $remainingNews = $newsCategory->news->skip(1)->take(5); // Lấy các tin còn lại (tối đa 5)
+                                        @endphp
+                                        <div class="col-lg-6">
+                                            @if ($featuredNews)
+                                                <div class="news-item featured-news">
+                                                    @if ($featuredNews->image)
+                                                        <img alt="{{ $featuredNews->title }}" class="news-img w-100"
+                                                            src="{{ asset('storage/' . $featuredNews->image) }}"
+                                                            style="object-fit: cover; max-height: 400px;">
+                                                    @else
+                                                        <img alt="default image" class="news-img w-100"
+                                                            src="{{ asset('portal_assets/img/default-news.png') }}"
+                                                            style="object-fit: cover; max-height: 400px;">
+                                                    @endif
+                                                    <div class="news-text-box mt-3">
+                                                        <span
+                                                            class="date">{{ $featuredNews->created_at->format('F j, Y') }}</span>
+                                                        <a href="{{ route('portal.news.show', $featuredNews->slug) }}">
+                                                            <h4 class="news-title">{{ $featuredNews->title }}</h4>
+                                                        </a>
+                                                        <p class="para">{{ Str::limit($featuredNews->excerpt, 150) }}</p>
+                                                        <a href="{{ route('portal.news.show', $featuredNews->slug) }}"
+                                                            class="btn btn-info btn-sm">Đọc thêm</a>
                                                     </div>
-                                                </li>
-                                            @empty
-                                                <li class="text-muted">Không có tin tức khác.</li>
-                                            @endforelse
-                                            @if ($newsCategory->news->count() > 6)
-                                                <li class="mt-3 text-center">
-                                                    <a href="{{ route('portal.news.category', $newsCategory->slug) }}"
-                                                        class="btn btn-outline-info btn-sm">Xem thêm tin tức
-                                                        {{ $newsCategory->name }}</a>
-                                                </li>
+                                                </div>
                                             @endif
-                                        </ul>
-                                    </div>
-                                @endif
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <ul class="list-unstyled">
+                                                @forelse ($remainingNews as $news)
+                                                    <li class="mb-3">
+                                                        <div class="d-flex align-items-center">
+                                                            @if ($news->image)
+                                                                <img src="{{ asset('storage/' . $news->image) }}"
+                                                                    alt="{{ $news->title }}"
+                                                                    style="width: 80px; height: 60px; object-fit: cover;margin-right:10px"
+                                                                    class="me-3">
+                                                            @else
+                                                                <img src="{{ asset('portal_assets/img/default-news-small.png') }}"
+                                                                    alt="default"
+                                                                    style="width: 80px; height: 60px; object-fit: cover;margin-right:10px"
+                                                                    class="me-3">
+                                                            @endif
+                                                            <div>
+                                                                <a href="{{ route('portal.news.show', $news->slug) }}"
+                                                                    class="text-dark stretched-link">{{ $news->title }}</a>
+                                                                <small
+                                                                    class="text-muted d-block">{{ $news->created_at->format('M d, Y') }}</small>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                @empty
+                                                    <li class="text-muted">Không có tin tức khác.</li>
+                                                @endforelse
+                                                @if ($newsCategory->news->count() > 6)
+                                                    <li class="mt-3 text-center">
+                                                        <a href="{{ route('portal.news.category', $newsCategory->slug) }}"
+                                                            class="btn btn-outline-info btn-sm">Xem thêm tin tức
+                                                            {{ $newsCategory->name }}</a>
+                                                    </li>
+                                                @endif
+                                            </ul>
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
+                        @endif
+                    @empty
+                        <div class="col-12 text-center">
+                            <p>Chưa có tin tức nào.</p>
+                        </div>
+                    @endforelse
+                </div>
+                <div class="cols-12 col-xl-3">
+                    @if ($links->isNotEmpty())
+                        <div class="sidebar-links">
+                            <h5>Liên kết hữu ích</h5>
+                            <ul class="list-unstyled">
+                                @foreach ($links as $link)
+                                    <li class="mb-3">
+                                        @if ($link->image)
+                                            <a href="{{ $link->url }}" target="_blank">
+                                                <img src="{{ asset('storage/' . $link->image) }}"
+                                                    alt="{{ $link->name }}" class="img-fluid" style="max-height: 100px;">
+                                            </a>
+                                            <hr>
+                                        @endif
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
                     @endif
-                @empty
-                    <div class="col-12 text-center">
-                        <p>Chưa có tin tức nào.</p>
-                    </div>
-                @endforelse
-            </div>
-            <div class="cols-12 col-xl-3">
+                </div>
             </div>
         </div>
     </section>

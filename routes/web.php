@@ -17,6 +17,7 @@ use App\Http\Controllers\PortalProductController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ConfigController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\LinkController;
 use App\Http\Controllers\PortalContactController;
 
 use \UniSharp\LaravelFilemanager\Lfm;
@@ -51,6 +52,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('banners', BannerController::class);
         Route::resource('configs', ConfigController::class);
         Route::resource('contacts', ContactController::class)->only(['index', 'show', 'update', 'destroy']);
+          Route::resource('links', LinkController::class);
         Route::post('/news/upload-image', [NewsController::class, 'uploadImage'])->name('news.upload_image');
         Route::post('/news/upload-media', [NewsController::class, 'uploadMedia'])->name('news.upload_media');
         // Các route admin khác

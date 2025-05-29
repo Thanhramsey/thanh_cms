@@ -9,6 +9,7 @@ use App\Models\Banner;
 use App\Models\Image;
 use App\Models\Config;
 use App\Models\News;
+use App\Models\Link;
 use Illuminate\View\View;
 
 use Illuminate\Http\Request;
@@ -26,9 +27,9 @@ class PortalController extends Controller
         $newsCategories = Category::where('module', 'news')->where('active', 1)->with('news')->get();
         $bannerSettings = Banner::where('is_active', true)->first();
         $bannerImages = Image::where('group', 1)->get();
+        $links = Link::all(); // Lấy tất cả liên kết
         
-        
-        return view('portal.index', compact('menus', 'productCategories', 'newsCategories', 'bannerSettings', 'bannerImages','logo'));
+        return view('portal.index', compact('menus', 'productCategories', 'newsCategories', 'bannerSettings', 'bannerImages','logo','links'));
     }
 
     public function gioiThieu(): View
