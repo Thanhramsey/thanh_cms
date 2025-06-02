@@ -16,9 +16,9 @@
                     {!! $newsItem->content !!}
                 </div>
 
-                <div class="mt-5">
+                {{-- <div class="mt-5">
                     <a href="{{ url()->previous() }}" class="btn btn-secondary">Quay lại</a>
-                </div>
+                </div> --}}
             </div>
             <div class="col-md-3">
                 <div class="card">

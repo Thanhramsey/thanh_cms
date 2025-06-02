@@ -357,6 +357,15 @@ section#home-banner  {
 .blog-sec .list-unstyled li{
     border-bottom: 1px dotted black;
 }
+.blog-sec .sidebar-links {
+    color: black;
+}
+
+
+.blog-sec .sidebar-links .list-unstyled li{
+    border-bottom: none;
+    margin-bottom: 10px;
+}
 
 .blog-sec h2 {
     font-size: 2rem; /* Lớn hơn */
@@ -372,4 +381,8 @@ section#home-banner  {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow nhẹ */
     padding: 20px; /* Thêm padding bên trong box */
     margin-bottom: 20px; /* Thêm khoảng cách giữa các box */
+}
+
+.news-detail{
+border-bottom: 2px solid #0056b3
 }

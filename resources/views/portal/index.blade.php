@@ -103,8 +103,8 @@
                                                             <h4 class="news-title">{{ $featuredNews->title }}</h4>
                                                         </a>
                                                         <p class="para">{{ Str::limit($featuredNews->excerpt, 150) }}</p>
-                                                        <a href="{{ route('portal.news.show', $featuredNews->slug) }}"
-                                                            class="btn btn-info btn-sm">Đọc thêm</a>
+                                                        {{-- <a href="{{ route('portal.news.show', $featuredNews->slug) }}"
+                                                            class="btn btn-info btn-sm">Đọc thêm</a> --}}
                                                     </div>
                                                 </div>
                                             @endif
@@ -157,7 +157,7 @@
                 </div>
                 <div class="cols-12 col-xl-3">
                     @if ($links->isNotEmpty())
-                        <div class="sidebar-links">
+                        <div class="sidebar-links news-category-box">
                             <h5>Liên kết hữu ích</h5>
                             <ul class="list-unstyled">
                                 @foreach ($links as $link)
@@ -165,7 +165,8 @@
                                         @if ($link->image)
                                             <a href="{{ $link->url }}" target="_blank">
                                                 <img src="{{ asset('storage/' . $link->image) }}"
-                                                    alt="{{ $link->name }}" class="img-fluid" style="max-height: 100px;">
+                                                    alt="{{ $link->name }}" class="img-fluid"
+                                                    style="max-height: 100px;width:100%">
                                             </a>
                                             <hr>
                                         @endif
@@ -174,6 +175,26 @@
                             </ul>
                         </div>
                     @endif
+                    <div class="mt-4 sidebar-documents news-category-box">
+                        <h5>Văn bản</h5>
+                        <ul class="list-unstyled">
+                            @forelse ($documents as $document)
+                                <li class="mb-2">
+                                    <i class="fas fa-file-alt me-2"></i>
+                                    <a
+                                        href="{{ route('portal.documents.show', $document->id) }}">{{ $document->title }}</a>
+                                    @if ($document->file_path)
+                                        <span class="ms-2">
+                                            <a href="{{ asset('storage/' . $document->file_path) }}" target="_blank"
+                                                class="btn btn-sm btn-outline-info">Tải</a>
+                                        </span>
+                                    @endif
+                                </li>
+                            @empty
+                                <li>Không có văn bản nào.</li>
+                            @endforelse
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

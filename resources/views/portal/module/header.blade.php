@@ -14,13 +14,13 @@
             <div class="navbar-nav ml-auto">
                 @foreach ($menus as $menu)
                     <div class="nav-item {{ $menu->children->count() > 0 ? '' : '' }}">
-                        <a class="nav-link hvr-underline-from-left" href="{{ $menu->url }}">{{ $menu->title }}</a>
+                        <a class="nav-link hvr-underline-from-left" href="{{ url($menu->url) }}">{{ $menu->title }}</a>
                         @if ($menu->children->count())
                             <div class="sub-menu">
                                 <div class="menu-column">
                                     @foreach ($menu->children as $child)
                                         <a class="hvr-underline-from-left"
-                                            href="{{ $child->url }}">{{ $child->title }}</a>
+                                            href="{{ url($child->url) }}">{{ $child->title }}</a>
                                     @endforeach
                                 </div>
                             </div>
