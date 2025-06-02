@@ -14,12 +14,23 @@ class MenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $menus = Menu::orderBy('order')->get();
-        return view('admin.menus.index', compact('menus'));
-    }
+        $query = Menu::query();
 
+        if ($request->has('title')) {
+            $query->where('title', 'like', '%' . $request->title . '%');
+        }
+
+        if ($request->has('parent_id') && $request->parent_id != '') {
+            $query->where('parent_id', $request->parent_id);
+        }
+
+        $menus = $query->orderBy('parent_id', 'asc')->orderBy('order', 'asc')->paginate(10)->withQueryString();
+        $parentMenus = Menu::whereNull('parent_id')->orderBy('title')->get();
+
+        return view('admin.menus.index', compact('menus', 'parentMenus'));
+    }
     /**
      * Show the form for creating a new resource.
      *

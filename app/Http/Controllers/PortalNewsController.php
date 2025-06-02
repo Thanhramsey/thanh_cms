@@ -9,6 +9,8 @@ use App\Models\Menu;
 use App\Models\Config;
 use App\Models\Document;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PortalNewsController extends Controller
 {
@@ -51,14 +53,28 @@ class PortalNewsController extends Controller
         return view('portal.documents.show', compact('document','menus','logo','otherDocuments'));
     }
 
-    public function indexByCategory(\App\Models\Category $category)
+    public function indexByCategory(\App\Models\Category $category, Request $request)
     {
-          $menus = Menu::whereNull('parent_id')
+        $menus = Menu::whereNull('parent_id')
             ->orderBy('order')
             ->with('children')
             ->get();
-           $logo = Config::where('key', 'logo_path')->first();    
-        $documents = Document::where('category_id', $category->id)->latest()->paginate(10);
+        $logo = Config::where('key', 'logo_path')->first();    
+        $query = Document::where('category_id', $category->id);
+
+        if ($request->has('so_van_ban')) {
+            $query->where('so_van_ban', 'like', '%' . $request->so_van_ban . '%');
+        }
+
+        if ($request->has('trich_yeu')) {
+            $query->where('trich_yeu', 'like', '%' . $request->trich_yeu . '%');
+        }
+
+        if ($request->has('co_quan_ban_hanh')) {
+            $query->where('co_quan_ban_hanh', 'like', '%' . $request->co_quan_ban_hanh . '%');
+        }
+
+        $documents = $query->latest()->paginate(10)->withQueryString();
         return view('portal.documents.index', compact('documents', 'category','menus','logo'));
     }
 }
