@@ -6,6 +6,13 @@
 @section('content')
     @include('portal.module.banner')
     <section id="about">
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <p>
+                    {{ $marquee->value }}
+                </p>
+            </div>
+        </div>
         <div class="container">
             <div class="row align-items-center">
                 <div class=" col-sm-12 col-md-6 img-sec mt-5 mt-md-0 wow fadeIn order-2 order-md-1" data-wow-duration="1.5s"
@@ -73,11 +80,11 @@
     <section class="blog-sec" id="news-section">
         <div class="container">
             <div class="row">
-                <div class="cols-12 col-xl-9">
+                <div class="cols-12 col-xl-8">
                     @forelse ($newsCategories as $newsCategory)
                         @if ($newsCategory->news->isNotEmpty())
+                            <h2 class="header-text">{{ $newsCategory->name }}</h2>
                             <div class="mb-5 wow zoomIn news-category-box" data-wow-duration="1s" data-wow-delay=".1s">
-                                <h2>{{ $newsCategory->name }}</h2>
                                 <div class="row">
                                     @if ($newsCategory->news->isNotEmpty())
                                         @php
@@ -100,7 +107,7 @@
                                                         <span
                                                             class="date">{{ $featuredNews->created_at->format('F j, Y') }}</span>
                                                         <a href="{{ route('portal.news.show', $featuredNews->slug) }}">
-                                                            <h4 class="news-title">{{ $featuredNews->title }}</h4>
+                                                            <h5 class="news-title">{{ $featuredNews->title }}</h5>
                                                         </a>
                                                         <p class="para">{{ Str::limit($featuredNews->excerpt, 150) }}</p>
                                                         {{-- <a href="{{ route('portal.news.show', $featuredNews->slug) }}"
@@ -155,10 +162,10 @@
                         </div>
                     @endforelse
                 </div>
-                <div class="cols-12 col-xl-3">
+                <div class="cols-12 col-xl-4">
                     @if ($links->isNotEmpty())
+                        <h3 class="header-text">Liên kết hữu ích</h3>
                         <div class="sidebar-links news-category-box">
-                            <h5>Liên kết hữu ích</h5>
                             <ul class="list-unstyled">
                                 @foreach ($links as $link)
                                     <li class="mb-3">
@@ -175,24 +182,59 @@
                             </ul>
                         </div>
                     @endif
+                    <h3 class="header-text">Văn bản</h3>
                     <div class="mt-4 sidebar-documents news-category-box">
-                        <h5>Văn bản</h5>
-                        <ul class="list-unstyled">
-                            @forelse ($documents as $document)
-                                <li class="mb-2">
-                                    <i class="fas fa-file-alt me-2"></i>
-                                    <a
-                                        href="{{ route('portal.documents.show', $document->id) }}">{{ $document->title }}</a>
-                                    @if ($document->file_path)
-                                        <span class="ms-2">
-                                            <a href="{{ asset('storage/' . $document->file_path) }}" target="_blank"
-                                                class="btn btn-sm btn-outline-info">Tải</a>
-                                        </span>
+                        @if ($documents->isNotEmpty())
+                            <div class="vertical-marquee-container">
+                                <ul class="list-unstyled vertical-marquee-content">
+                                    {{-- Original content --}}
+                                    @foreach ($documents as $document)
+                                        <li class="mb-2">
+                                            <i class="fas fa-file-alt me-2"></i>
+                                            <a
+                                                href="{{ route('portal.documents.show', $document->id) }}">{{ $document->title }}</a>
+                                            @if ($document->file_path)
+                                                <span class="ms-2">
+                                                    <a href="{{ asset('storage/' . $document->file_path) }}"
+                                                        target="_blank" class="btn btn-sm btn-outline-info">Tải</a>
+                                                </span>
+                                            @endif
+                                        </li>
+                                    @endforeach
+
+                                    {{-- Duplicate content for seamless loop (only if there's more than one item) --}}
+                                    @if ($documents->count() > 1)
+                                        @foreach ($documents as $document)
+                                            <li class="mb-2" aria-hidden="true">
+                                                <i class="fas fa-file-alt me-2"></i>
+                                                <a
+                                                    href="{{ route('portal.documents.show', $document->id) }}">{{ $document->title }}</a>
+                                                @if ($document->file_path)
+                                                    <span class="ms-2">
+                                                        <a href="{{ asset('storage/' . $document->file_path) }}"
+                                                            target="_blank" class="btn btn-sm btn-outline-info">Tải</a>
+                                                    </span>
+                                                @endif
+                                            </li>
+                                        @endforeach
                                     @endif
-                                </li>
-                            @empty
+                                </ul>
+                            </div>
+                        @else
+                            <ul class="list-unstyled">
                                 <li>Không có văn bản nào.</li>
-                            @endforelse
+                            </ul>
+                        @endif
+                    </div>
+                    <h3 class="header-text">Thống kê truy cập</h3>
+                    <div class="mt-4 sidebar-statistics news-category-box">
+
+                        <ul class="list-unstyled">
+                            <li class="mb-2">Đang online: <strong>{{ $statistics['online'] }}</strong></li>
+                            <li class="mb-2">Hôm nay: <strong>{{ $statistics['today'] }}</strong></li>
+                            <li class="mb-2">Trong tuần: <strong>{{ $statistics['this_week'] }}</strong></li>
+                            <li class="mb-2">Trong tháng: <strong>{{ $statistics['this_month'] }}</strong></li>
+                            <li class="mb-2">Tất cả: <strong>{{ $statistics['total'] }}</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -200,40 +242,27 @@
         </div>
     </section>
     <!-- End Blog -->
-
-    <!-- Start Contact -->
-    @include('portal.module.contact')
-    {{-- <section class="contact-sec" id="contact">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-3 text-center">
-                    <div class="user-img"><img src="portal_assets/img/footer-logo.png" class="rounded-circle"
-                            alt="img"></div>
-                    <h4 class="user-name">MegaOne Hosts</h4>
-                    <p class="user-designation">email@website.com</p>
-                    <p class="user-designation">+1 631 123 4567</p>
-                </div>
-                <div class="col-12 col-md-9">
-                    <div class="row">
-                        <div class="col-12" id="result"></div>
-                        <div class="col-12 col-md-6">
-                            <form class="row contact-form row-padding" id="contact-form-data">
-                                <div class="col-12">
-                                    <input type="text" name="userName" placeholder="Name" class="form-control">
-                                    <input type="text" name="userPhone" placeholder="Contact No" class="form-control">
-                                    <input type="email" name="userEmail" placeholder="Email" class="form-control">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-12 col-md-6 contact-form">
-                            <textarea class="form-control" name="userMessage" rows="6" placeholder="Type Your Message Here"></textarea>
-                            <a href="javascript:void(0);"
-                                class="btn btn-medium btn-rounded btn-trans-white rounded-pill w-100 contact_btn main-font">Let’s
-                                Get In Touch</a>
-                        </div>
-                    </div>
+    @php
+        $promoteUrl = $promote->description;
+        if ($promoteUrl && !preg_match('~^(?:f|ht)tps?://~i', $promoteUrl)) {
+            $promoteUrl = 'https://' . $promoteUrl; // Mặc định thêm https://
+        }
+    @endphp
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-12 text-center">
+                <div class="user-img">
+                    @if ($promote && $promote->value)
+                        <a href="{{ $promoteUrl }}" target="_blank"> {{-- Thêm target="_blank" để mở trong tab mới --}}
+                            <img class="promote-img" src="{{ asset($promote->value) }}">
+                        </a>
+                    @else
+                    @endif
                 </div>
             </div>
         </div>
-    </section> --}}
+    </div>
+    <!-- Start Contact -->
+    @include('portal.module.contact')
+
 @endsection

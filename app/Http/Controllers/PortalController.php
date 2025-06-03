@@ -11,7 +11,10 @@ use App\Models\Config;
 use App\Models\News;
 use App\Models\Link;
 use App\Models\Document;
+use App\Models\PageView;
 use Illuminate\View\View;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 
 use Illuminate\Http\Request;
 
@@ -30,8 +33,46 @@ class PortalController extends Controller
         $bannerImages = Image::where('group', 1)->get();
         $documents = Document::all(); // Lấy tất cả văn bản
         $links = Link::all(); // Lấy tất cả liên kết
+        $marquee = Config::where('key', 'marquee')->first();
+        $promote = Config::where('key', 'promote')->first();
+        $statistics = $this->getAccessStatistics();
         
-        return view('portal.index', compact('menus', 'productCategories', 'newsCategories', 'bannerSettings', 'bannerImages','logo','links','documents'));
+        return view('portal.index', compact('menus', 'productCategories', 'newsCategories', 'bannerSettings',
+        'bannerImages','logo','links','documents','marquee','statistics','promote'));
+    }
+
+     private function getAccessStatistics()
+    {
+        // Cache kết quả thống kê để tránh truy vấn DB quá nhiều lần
+        return Cache::remember('access_statistics', 60, function () { // Cache trong 60 giây
+            $today = Carbon::today();
+            $startOfWeek = Carbon::now()->startOfWeek(Carbon::MONDAY); // Bắt đầu tuần từ Thứ Hai
+            $startOfMonth = Carbon::now()->startOfMonth();
+
+            $onlineUsers = PageView::where('created_at', '>=', Carbon::now()->subMinutes(5))
+                                   ->distinct('session_id')
+                                   ->count('session_id');
+
+            $todayViews = PageView::whereDate('view_date', $today)
+                                  ->distinct('session_id')
+                                  ->count('session_id');
+            $weeklyViews = PageView::whereDate('view_date', '>=', $startOfWeek)
+                                   ->distinct('session_id')
+                                   ->count('session_id');
+
+            $monthlyViews = PageView::whereDate('view_date', '>=', $startOfMonth)
+                                    ->distinct('session_id')
+                                    ->count('session_id');
+            $totalViews = PageView::distinct('session_id')->count('session_id');
+
+            return [
+                'online' => $onlineUsers,
+                'today' => $todayViews,
+                'this_week' => $weeklyViews,
+                'this_month' => $monthlyViews,
+                'total' => $totalViews,
+            ];
+        });
     }
 
     public function gioiThieu(): View

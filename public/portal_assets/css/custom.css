@@ -349,7 +349,7 @@ section#home-banner  {
 }
 
 .featured-news .news-title {
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: bold;
     color: #007bff; /* Màu xanh dương nổi bật */
 }
@@ -367,16 +367,32 @@ section#home-banner  {
     margin-bottom: 10px;
 }
 
-.blog-sec h2 {
-    font-size: 2rem; /* Lớn hơn */
-    color: #007bff; /* Màu xanh dương */
-    font-weight: bold; /* In đậm */
-    margin-bottom: 1.5rem; /* Thêm khoảng cách dưới tiêu đề */
-    text-align: left; /* Căn trái (mặc định) */
+
+
+.blog-sec .header-text {
+  font-weight: bold;
+  color: #0077cc; /* Màu đỏ đậm */
+  text-transform: uppercase;
+  background: linear-gradient(to right, #e0f3ff, #ffffff);
+  padding: 10px 20px;
+  border-left: 6px solid #0077cc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 119, 204, 0.2);
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.blog-sec h2{
+    font-size: 28px;
 }
 
+.blog-sec h3{
+    font-size: 23px;
+}
+
+
 .news-category-box {
-    background-color: #f4f8ff; /* Màu nền bạn muốn */
+    background-color: #f5f9ff; /* Màu nền bạn muốn */
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow nhẹ */
     padding: 20px; /* Thêm padding bên trong box */
@@ -389,4 +405,136 @@ border-bottom: 2px solid #0056b3
 
 .border-detail{
 border-bottom: 2px solid #0056b3
+}
+
+.author-skills h4{
+	color: white;
+}
+
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden; /* Ẩn phần nội dung vượt quá khung */
+    background-color: #f0f8ff; /* Màu nền nhẹ */
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap; /* Ngăn nội dung xuống dòng */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.marquee-content {
+    display: inline-block; /* Đảm bảo nội dung nằm trên một dòng */
+    padding-left: 100%; /* Bắt đầu từ ngoài màn hình */
+    animation: marquee 30s linear infinite; /* Tên animation, thời gian, kiểu, lặp vô hạn */
+}
+
+/* Điều chỉnh khoảng cách giữa các đoạn văn bản trong marquee */
+.marquee-content p {
+    display: inline-block;
+    margin: 0 50px; /* Khoảng cách giữa các thông báo */
+    font-size: 0.95rem;
+    color: red;
+    font-weight: bold;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); } /* Bắt đầu từ vị trí ban đầu */
+    100% { transform: translateX(-100%); } /* Di chuyển sang trái 100% chiều rộng nội dung */
+}
+
+/* Để đảm bảo hiệu ứng chạy mượt mà trên nhiều trình duyệt */
+@-webkit-keyframes marquee {
+    0% { -webkit-transform: translateX(0); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+
+
+.vertical-marquee-container {
+    height: 250px; /* **Chiều cao cố định của vùng hiển thị cuộn.** Điều chỉnh theo số lượng item bạn muốn thấy cùng lúc */
+    overflow: hidden; /* Ẩn nội dung vượt quá khung */
+    position: relative; /* Quan trọng: để .vertical-marquee-content có thể định vị tuyệt đối */
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.vertical-marquee-content {
+    position: absolute; /* Quan trọng: cho phép di chuyển bằng top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0; /* Đảm bảo không có margin/padding mặc định gây ảnh hưởng */
+    animation: verticalMarquee 5s linear infinite; /* Thời gian animation, điều chỉnh để nhanh/chậm */
+}
+
+/* Pause animation on hover */
+.vertical-marquee-container:hover .vertical-marquee-content {
+    animation-play-state: paused;
+}
+
+.vertical-marquee-content li {
+    padding: 8px 0; /* Khoảng cách giữa các mục */
+    border-bottom: 1px dashed #e9ecef; /* Đường gạch ngang giữa các mục */
+    font-size: 0.95rem;
+    white-space: normal; /* Cho phép nội dung xuống dòng nếu dài */
+}
+
+.vertical-marquee-content li:last-of-type {
+    border-bottom: none; /* Bỏ đường gạch ngang ở mục cuối cùng của mỗi bộ */
+}
+
+/* Keyframes cho animation cuộn dọc */
+@keyframes verticalMarquee {
+    0% { top: 0; }
+    /* Tính toán điểm dừng:
+       Lấy chiều cao của UL (nội dung đã nhân đôi)
+       Chia đôi để được chiều cao của nội dung gốc
+       Di chuyển lên bằng chiều cao đó
+    */
+    100% { top: -50%; } /* Di chuyển lên trên 50% chiều cao của chính nó (UL) */
+}
+
+/* Webkit vendor prefix for broader browser compatibility */
+@-webkit-keyframes verticalMarquee {
+    0% { top: 0; }
+    100% { top: -50%; }
+}
+
+.stretched-link{
+    font-weight: bold;
+}
+
+
+.sidebar-statistics h5 {
+    color: #dc3545; /* Màu đỏ như trong hình */
+    font-weight: bold;
+    border-bottom: 2px solid #dc3545;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.sidebar-statistics ul {
+    padding-left: 0;
+}
+
+.sidebar-statistics li {
+    font-size: 1rem;
+    color: #333;
+    padding: 5px 0;
+    border-bottom: none;
+}
+
+.sidebar-statistics strong {
+    float: right;
+    font-weight: bold;
+}
+
+.promote-img{
+    max-height: 200px; 
+    width: 100%; 
+    display: block; 
+    margin: 0 auto; 
+    object-fit: cover;
+    margin-bottom: 20px;
 }

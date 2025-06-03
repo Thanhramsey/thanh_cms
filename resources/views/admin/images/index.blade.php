@@ -17,7 +17,7 @@
                             <th>ID</th>
                             <th>Tiêu đề</th>
                             <th>Ảnh</th>
-                            <th>Mô tả</th>
+                            <th>Link</th>
                             <th>Nhóm</th>
                             <th>Thứ tự</th>
                             <th>Alt Text</th>
@@ -40,7 +40,7 @@
                                         Không có ảnh
                                     @endif
                                 </td>
-                                <td>{{ Str::limit($item->description, 50) }}</td>
+                                <td>{{ $item->path }}</td>
                                 {{-- <td>{{ $item->group }}</td> --}}
                                 <td>{{ $item->categoryName() }}</td>
                                 <td>{{ $item->order }}</td>
