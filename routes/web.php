@@ -73,6 +73,17 @@ Route::prefix('tin-tuc')->name('portal.news.')->group(function () {
     Route::get('/chuyen-muc/{slug}', [PortalNewsController::class, 'category'])->name('category'); // Route xem tất cả tin tức theo chuyên mục
 });
 
+Route::prefix('kham-chua-benh')->name('portal.news.')->group(function () {
+    Route::get('/{slug}', [PortalNewsController::class, 'show'])->name('show'); // Route xem chi tiết tin tức
+    Route::get('/chuyen-muc/{slug}', [PortalNewsController::class, 'category'])->name('category'); // Route xem tất cả tin tức theo chuyên mục
+});
+
+
+Route::prefix('thu-vien')->name('portal.media.')->group(function () {
+    Route::get('/{slug}', [PortalNewsController::class, 'show'])->name('show');
+    Route::get('/chuyen-muc/{slug}', [PortalNewsController::class, 'category'])->name('category');
+});
+
 Route::prefix('san-pham')->name('portal.product.')->group(function () {
     Route::get('/{slug}', [PortalProductController::class, 'show'])->name('show'); // Trang chi tiết sản phẩm
     Route::get('/danh-muc/{slug}', [PortalProductController::class, 'category'])->name('category'); // Trang danh sách sản phẩm theo danh mục

@@ -10,12 +10,17 @@
                 <p>Chịu trách nhiệm nội dung: </p>
             </div>
             <div class="col-md-4 text-end">
-                <h3><i class="fas fa-chart-bar me-2"></i> THỐNG KÊ TRUY CẬP</h3>
-                <p><i class="fas fa-users me-1"></i> Lượt truy cập hiện tại: 9</p>
-                <p><i class="fas fa-sun me-1"></i> Hôm nay: 5</p>
-                <p><i class="fas fa-calendar-alt me-1"></i> Lượt truy cập tháng: 2000</p>
-                <p><i class="fas fa-chart-line me-1"></i> Tổng lượt truy cập: 29575</p>
+                <h3><i class="fas fa-chart-bar me-2"></i> Giờ làm việc</h3>
+                <p>Thứ 2 - Chủ nhật</p>
+                <p>Sáng: 7h00 - 11h30</p>
+                <p>Chiều: 13h00 - 16h30</p>
+                <p>Khám bệnh tất cả các ngày trong tuần (Cả ngày nghỉ và Lễ, Tết)</p>
+                <p>Cấp cứu 24/24: 0914.555.115</p>
             </div>
+
+
+
+
         </div>
         <div class="row align-items-center">
             <!--Social-->

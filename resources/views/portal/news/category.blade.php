@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container py-5 news-detail">
-        <h2 class="mb-4">Chuyên mục: {{ $category->name }}</h2>
+        <h2 class="mb-4 header-text">Chuyên mục: {{ $category->name }}</h2>
         <div class="row">
             @forelse ($newsList as $news)
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
                     <div class="card h-100">
                         @if ($news->image)
                             <img src="{{ asset('storage/' . $news->image) }}" class="card-img-top" alt="{{ $news->title }}"
@@ -17,7 +17,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $news->title }}</h5>
                             <p class="card-text">{{ Str::limit($news->excerpt, 100) }}</p>
-                            <a href="{{ route('portal.news.show', $news->slug) }}" class="btn btn-info btn-sm">Đọc thêm</a>
+                            {{-- <a href="{{ route('portal.news.show', $news->slug) }}" class="btn btn-info btn-sm">Đọc thêm</a> --}}
                         </div>
                         <div class="card-footer text-muted">
                             {{ $news->created_at->diffForHumans() }}

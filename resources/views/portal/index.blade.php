@@ -15,30 +15,31 @@
         </div>
         <div class="container">
             <div class="row align-items-center">
-                <div class=" col-sm-12 col-md-6 img-sec mt-5 mt-md-0 wow fadeIn order-2 order-md-1" data-wow-duration="1.5s"
+                <div class="col-sm-12 col-md-6 img-sec mt-5 mt-md-0 wow fadeIn order-2 order-md-1" data-wow-duration="1.5s"
                     data-wow-delay=".5s">
                     <div class="blue_rectangle"></div>
                     <div class="about_img position-relative">
-                        <img src="{{ asset('portal_assets/img/about-img.png') }}" alt="About Image">
-                        <a data-fancybox="video" href="https://www.youtube.com/watch?v=rRevsM2sW7U"
-                            class="video-play-button position-absolute">
-                            <i class="las la-play"></i>
-                        </a>
+                        <img src="{{ asset('portal_assets/img/info.png') }}" alt="Slider-Image">
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6 pl-md-5 wow fadeInRight order-1 order-md-1" data-wow-duration="1.5s"
                     data-wow-delay=".5s">
                     <div class="about-heading">
-                        <h1 class="heading margin_heading main-font">Giới thiệu VNPT</h1>
-                        <p class="info">Tập đoàn Bưu chính Viễn thông Việt Nam (VNPT) là một trong những doanh nghiệp
-                            hàng đầu trong lĩnh vực công nghệ thông tin và viễn thông tại Việt Nam.</p>
-                        <p class="info my-4">VNPT không ngừng đổi mới, cung cấp các dịch vụ số hiện đại như hạ tầng mạng,
-                            trung tâm dữ liệu, điện toán đám mây, và các giải pháp chuyển đổi số toàn diện cho cá nhân,
-                            doanh nghiệp và chính phủ.</p>
+                        <h1 class="heading margin_heading main-font">Giới thiệu Bệnh viện</h1>
+                        <p class="info">
+                            Bệnh viện Y học Cổ truyền tỉnh Gia Lai là đơn vị y tế chuyên sâu về khám, chữa bệnh bằng phương
+                            pháp Y học cổ truyền kết hợp với Y học hiện đại.
+                        </p>
+                        <p class="info my-4">
+                            Với đội ngũ y bác sĩ giàu kinh nghiệm, trang thiết bị hiện đại cùng sự kết hợp giữa các bài
+                            thuốc Đông y truyền thống và kỹ thuật Tây y, bệnh viện luôn nỗ lực mang đến chất lượng điều trị
+                            hiệu quả, an toàn cho người dân trên địa bàn và khu vực Tây Nguyên.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
     <section id="product-list">
@@ -183,7 +184,7 @@
                         </div>
                     @endif
                     <h3 class="header-text">Văn bản</h3>
-                    <div class="mt-4 sidebar-documents news-category-box">
+                    <div class="sidebar-documents news-category-box">
                         @if ($documents->isNotEmpty())
                             <div class="vertical-marquee-container">
                                 <ul class="list-unstyled vertical-marquee-content">
@@ -227,7 +228,7 @@
                         @endif
                     </div>
                     <h3 class="header-text">Thống kê truy cập</h3>
-                    <div class="mt-4 sidebar-statistics news-category-box">
+                    <div class="sidebar-statistics news-category-box">
 
                         <ul class="list-unstyled">
                             <li class="mb-2">Đang online: <strong>{{ $statistics['online'] }}</strong></li>

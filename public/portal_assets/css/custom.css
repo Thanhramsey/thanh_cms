@@ -132,6 +132,10 @@ h2 {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
+    .news-detail{
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
     .news-detail h1.mb-4 ,  .news-detail h2.mb-4 {
         color: #333;
         /* font-size: 2.5rem; */
@@ -196,7 +200,7 @@ h2 {
     }
 
     .news-detail .card-title {
-        font-size: 1.2rem;
+        font-size: 15px;
         font-weight: bold;
         margin-bottom: 1rem;
         border-bottom: 2px solid #eee;
@@ -376,24 +380,51 @@ section#home-banner  {
   background: linear-gradient(to right, #e0f3ff, #ffffff);
   padding: 10px 20px;
   border-left: 6px solid #0077cc;
-  border-radius: 8px;
+   border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+    border-bottom-left-radius: 0px; 
+    border-bottom-right-radius: 5px; 
   box-shadow: 0 2px 5px rgba(0, 119, 204, 0.2);
   display: inline-block;
   margin-bottom: 5px;
   width: 100%;
 }
+
+.news-detail .header-text {
+  font-weight: bold;
+  color: #0077cc; /* Màu đỏ đậm */
+  text-transform: uppercase;
+  background: linear-gradient(to right, #e0f3ff, #ffffff);
+  padding: 10px 20px;
+  border-left: 6px solid #0077cc;
+   border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+    border-bottom-left-radius: 0px; 
+    border-bottom-right-radius: 5px; 
+  box-shadow: 0 2px 5px rgba(0, 119, 204, 0.2);
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.news-detail h5{
+    font-size: 15px;
+}
 .blog-sec h2{
-    font-size: 28px;
+    font-size: 20x;
 }
 
 .blog-sec h3{
-    font-size: 23px;
+    font-size: 18px;
 }
 
 
 .news-category-box {
     background-color: #f5f9ff; /* Màu nền bạn muốn */
-    border-radius: 20px;
+    border-top-left-radius: 0; 
+    border-top-right-radius: 0; 
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow nhẹ */
     padding: 20px; /* Thêm padding bên trong box */
     margin-bottom: 20px; /* Thêm khoảng cách giữa các box */
