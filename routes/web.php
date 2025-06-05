@@ -18,8 +18,11 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ConfigController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\LinkController;
+use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\PortalContactController;
+use App\Http\Controllers\PortalImageController;
+use App\Http\Controllers\PortalVideoController;
 
 use \UniSharp\LaravelFilemanager\Lfm;
 
@@ -54,7 +57,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('configs', ConfigController::class);
         Route::resource('documents', DocumentController::class);
         Route::resource('contacts', ContactController::class)->only(['index', 'show', 'update', 'destroy']);
-          Route::resource('links', LinkController::class);
+        Route::resource('links', LinkController::class);
+        Route::resource('videos', VideoController::class);
         Route::post('/news/upload-image', [NewsController::class, 'uploadImage'])->name('news.upload_image');
         Route::post('/news/upload-media', [NewsController::class, 'uploadMedia'])->name('news.upload_media');
         // Các route admin khác
@@ -67,6 +71,8 @@ Route::prefix('/')->name('portal.')->group(function () {
     // Các route khác của portal sẽ được thêm vào đây
     Route::get('/van-ban/{document}', [PortalNewsController::class, 'showDocuments'])->name('documents.show');
     Route::get('/van-ban/loai/{category:slug}', [PortalNewsController::class, 'indexByCategory'])->name('documents.category');
+    Route::get('/hinh-anh', [PortalImageController::class, 'index'])->name('images.index');
+    Route::get('/video', [PortalVideoController::class, 'index'])->name('videos.index');
 });
 Route::prefix('tin-tuc')->name('portal.news.')->group(function () {
     Route::get('/{slug}', [PortalNewsController::class, 'show'])->name('show'); // Route xem chi tiết tin tức
@@ -79,10 +85,10 @@ Route::prefix('kham-chua-benh')->name('portal.news.')->group(function () {
 });
 
 
-Route::prefix('thu-vien')->name('portal.media.')->group(function () {
-    Route::get('/{slug}', [PortalNewsController::class, 'show'])->name('show');
-    Route::get('/chuyen-muc/{slug}', [PortalNewsController::class, 'category'])->name('category');
-});
+// Route::prefix('thu-vien')->name('portal.media.')->group(function () {
+//     Route::get('/{slug}', [PortalNewsController::class, 'show'])->name('show');
+//     Route::get('/chuyen-muc/{slug}', [PortalNewsController::class, 'category'])->name('category');
+// });
 
 Route::prefix('san-pham')->name('portal.product.')->group(function () {
     Route::get('/{slug}', [PortalProductController::class, 'show'])->name('show'); // Trang chi tiết sản phẩm
