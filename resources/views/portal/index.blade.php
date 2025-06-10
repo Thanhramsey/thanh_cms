@@ -265,28 +265,12 @@
 
     {{-- Sử dụng $promoteUrl trong thẻ <a> --}}
     @if ($promoteUrl)
-        {{-- Chỉ render thẻ <a> nếu có URL hợp lệ --}}
         <a href="{{ $promoteUrl }}" target="_blank">
             <img class="promote-img" src="{{ asset($promote->value ?? '') }}"> {{-- Thêm ?? '' cho promote->value phòng khi nó null --}}
         </a>
     @else
-        {{-- Tùy chọn: hiển thị một ảnh placeholder hoặc không hiển thị gì cả nếu không có promoteUrl --}}
-        {{-- <img class="promote-img" src="{{ asset('path/to/default-image.jpg') }}"> --}}
     @endif
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-md-12 text-center">
-                <div class="user-img">
-                    @if ($promote && $promote->value)
-                        <a href="{{ $promoteUrl }}" target="_blank"> {{-- Thêm target="_blank" để mở trong tab mới --}}
-                            <img class="promote-img" src="{{ asset($promote->value) }}">
-                        </a>
-                    @else
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Start Contact -->
     @include('portal.module.contact')
 

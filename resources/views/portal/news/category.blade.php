@@ -17,7 +17,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $news->title }}</h5>
                             <p class="card-text">{{ Str::limit($news->excerpt, 100) }}</p>
-                            {{-- <a href="{{ route('portal.news.show', $news->slug) }}" class="btn btn-info btn-sm">Đọc thêm</a> --}}
+                            <a href="{{ route('portal.news.show', $news->slug) }}" class="btn btn-info btn-sm">Đọc thêm</a>
                         </div>
                         <div class="card-footer text-muted">
                             {{ $news->created_at->diffForHumans() }}

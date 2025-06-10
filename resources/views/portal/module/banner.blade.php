@@ -6,7 +6,7 @@
                      <div class="col-12 col-md-6 col-lg-6 text-md-center text-lg-left wow fadeInLeft content-margin"
                          data-wow-duration="1.5s" data-wow-delay="1.2s">
                          <div class="area-heading text-center text-lg-left">
-                             <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG QUÝ VỊ ĐẾN VỚI <span
+                             <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG ĐẾN VỚI <span
                                      class="d-block">BỆNH VIỆN Y HỌC CỔ TRUYỀN GIA LAI</span></h1>
                              <p class="text-white alt-font mb-5">Là cơ sở y tế chuyên sâu về Y học cổ truyền, Bệnh viện
                                  Y học cổ truyền Gia Lai tự hào mang đến dịch vụ khám, chữa bệnh hiệu quả, an toàn bằng
