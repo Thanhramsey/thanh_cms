@@ -699,8 +699,9 @@ header a.logo img {
     justify-content: center;
     width: 100%;
     background: #00b7ff;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #0176ff, #00b7ff);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #0176ff, #00b7ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to left, #2874A6, #2E86C1);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2874A6, #2E86C1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: linear-gradient(to left, #92DCE5, #B0E0E6); */
 }
 
 .slider-image {
@@ -729,15 +730,16 @@ header a.logo img {
 }
 
 .author-skills .small-heading {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
     margin: 6px 0 14px 0;
 }
 
 .author-skills .small-text {
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 300;
     line-height: 1.4;
+    color: #fff;
 }
 
 .about-media {
@@ -746,8 +748,8 @@ header a.logo img {
     vertical-align: bottom;
     transition: color .3s ease-out;
     z-index: 0;
-    padding-top: 30px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .about-media::before {
@@ -770,7 +772,7 @@ header a.logo img {
 
 .about-media .about-icon i{
     color: #ffffff;
-    font-size: 48px;
+    font-size: 20px;
     -webkit-transition: .8s ease;
     -o-transition: .8s ease;
     transition: .8s ease;
@@ -1926,10 +1928,11 @@ header a.logo img {
         position: relative;
     }
     .author-skills .small-heading {
-        font-size: 18px;
+        font-size: 14px;
     }
     .author-skills .small-text {
-        font-size: 14px;
+        font-size: 11px;
+        
     }
     #particles-js {
         display: block;

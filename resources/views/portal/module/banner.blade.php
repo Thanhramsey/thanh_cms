@@ -6,16 +6,12 @@
                      <div class="col-12 col-md-6 col-lg-6 text-md-center text-lg-left wow fadeInLeft content-margin"
                          data-wow-duration="1.5s" data-wow-delay="1.2s">
                          <div class="area-heading text-center text-lg-left">
-                             <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG BẠN ĐẾN VỚI <span
-                                     class="d-block">VNPT GIA LAI</span></h1>
-                             <p class="text-white alt-font mb-5">Là thành viên của Tập đoàn Bưu chính Viễn thông Việt
-                                 Nam
-                                 (VNPT). VNPT Gia Lai tự hào là nhà cung cấp hàng đầu các sản phẩm dịch vụ viễn thông -
-                                 công
-                                 nghệ thông tin toàn diện cho cá nhân và tổ chức doanh nghiệp.</p>
-                             <a href="#about" class="scroll btn btn-medium btn-rounded btn-trans-white mb-5">GET
-                                 STARTED
-                                 NOW</a>
+                             <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG QUÝ VỊ ĐẾN VỚI <span
+                                     class="d-block">BỆNH VIỆN Y HỌC CỔ TRUYỀN GIA LAI</span></h1>
+                             <p class="text-white alt-font mb-5">Là cơ sở y tế chuyên sâu về Y học cổ truyền, Bệnh viện
+                                 Y học cổ truyền Gia Lai tự hào mang đến dịch vụ khám, chữa bệnh hiệu quả, an toàn bằng
+                                 các phương pháp truyền thống kết hợp tinh hoa y học hiện đại, vì sức khỏe cộng đồng.
+                             </p>
                          </div>
                      </div>
                      <div class="col-12 col-md-6 col-lg-6 text-right image-order wow fadeInRight"
@@ -49,20 +45,16 @@
                              <div class="col-12 col-md-6 col-lg-6 text-md-center text-lg-left wow fadeInLeft content-margin"
                                  data-wow-duration="1.5s" data-wow-delay="1.2s">
                                  <div class="area-heading text-center text-lg-left">
-                                     <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG BẠN ĐẾN VỚI <span
-                                             class="d-block">VNPT GIA LAI</span></h1>
-                                     <p class="text-white alt-font mb-5">Là thành viên của Tập đoàn Bưu chính Viễn thông
-                                         Việt
-                                         Nam
-                                         (VNPT). VNPT Gia Lai tự hào là nhà cung cấp hàng đầu các sản phẩm dịch vụ viễn
-                                         thông
-                                         -
-                                         công
-                                         nghệ thông tin toàn diện cho cá nhân và tổ chức doanh nghiệp.</p>
-                                     <a href="#about"
-                                         class="scroll btn btn-medium btn-rounded btn-trans-white mb-5">GET
-                                         STARTED
-                                         NOW</a>
+                                     <h1 class="main-font text-white font-weight-bold mb-4">CHÀO MỪNG ĐẾN VỚI
+                                         <span class="d-block">BỆNH VIỆN Y HỌC CỔ TRUYỀN GIA LAI</span>
+                                     </h1>
+                                     <p class="text-white alt-font mb-5">Là cơ sở y tế chuyên sâu về Y học cổ truyền,
+                                         Bệnh viện
+                                         Y học cổ truyền Gia Lai tự hào mang đến dịch vụ khám, chữa bệnh hiệu quả, an
+                                         toàn bằng
+                                         các phương pháp truyền thống kết hợp tinh hoa y học hiện đại, vì sức khỏe cộng
+                                         đồng.
+                                     </p>
                                  </div>
                              </div>
                              <div class="col-12 col-md-6 col-lg-6 text-right image-order wow fadeInRight"
@@ -79,19 +71,22 @@
      <div class="container">
          <div class="row text-center text-lg-left">
              <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.2s">
-                 <span class="about-icon"><a href="javascript:void(0);"><i class="la la-broadcast-tower"></i></a></span>
-                 <h4 class="small-heading main-font">Dịch vụ viễn thông</h4>
-                 {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
+                 <span class="about-icon"><a href="javascript:void(0);"><i class="fas fa-stethoscope"></i></a></span>
+                 <h4 class="small-heading main-font">Khám & Điều trị YHCT</h4>
+                 <p class="small-text alt-font">Cung cấp dịch vụ khám, chẩn đoán và điều trị bệnh bằng các phương pháp Y
+                     học cổ truyền hiệu quả.</p>
              </div>
              <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.5s">
-                 <span class="about-icon"><a href="javascript:void(0);"><i class="las la-laptop-code"></i></a></span>
-                 <h4 class="small-heading main-font">Dịch vụ số</h4>
-                 {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
+                 <span class="about-icon"><a href="javascript:void(0);"><i class="fas fa-spa"></i></a></span>
+                 <h4 class="small-heading main-font">Các phương pháp trị liệu truyền thống</h4>
+                 <p class="small-text alt-font">Áp dụng châm cứu, xoa bóp, bấm huyệt, vật lý trị liệu, thủy châm và các
+                     liệu pháp cổ truyền khác.</p>
              </div>
              <div class="col-12 col-md-4 about-media wow zoomIn" data-wow-duration="1.5s" data-wow-delay="1.8s">
-                 <span class="about-icon"><a href="javascript:void(0);"><i class="las la-city"></i></a></span>
-                 <h4 class="small-heading main-font">Hệ sinh thái chuyển đổi số</h4>
-                 {{-- <p class="small-text alt-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
+                 <span class="about-icon"><a href="javascript:void(0);"><i class="fas fa-microscope"></i></a></span>
+                 <h4 class="small-heading main-font">Y học hiện đại kết hợp YHCT</h4>
+                 <p class="small-text alt-font">Kết hợp chẩn đoán, xét nghiệm y học hiện đại với các bài thuốc, phương
+                     pháp trị liệu cổ truyền.</p>
              </div>
          </div>
      </div>

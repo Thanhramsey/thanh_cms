@@ -8,9 +8,11 @@
     <section id="about">
         <div class="marquee-container">
             <div class="marquee-content">
-                <p>
-                    {{ $marquee->value }}
-                </p>
+                @if (isset($marquee) && $marquee->value)
+                    <p>
+                        {{ $marquee->value }}
+                    </p>
+                @endif
             </div>
         </div>
         <div class="container">
@@ -56,7 +58,13 @@
                                         <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
                                             style="max-width: 100px;">
                                     @endif
-                                    <p>{{ Str::limit($product->description, 50) }}</p>
+
+                                    @if (isset($product) && $product->description)
+                                        <p>
+                                            {{ Str::limit($product->description, 50) }}
+                                        </p>
+                                    @endif
+
                                     <a href="{{ route('portal.product.show', $product->slug) }}"
                                         class="btn btn-primary btn-sm">Xem chi tiết</a>
                                 </div>
@@ -244,11 +252,27 @@
     </section>
     <!-- End Blog -->
     @php
-        $promoteUrl = $promote->description;
-        if ($promoteUrl && !preg_match('~^(?:f|ht)tps?://~i', $promoteUrl)) {
-            $promoteUrl = 'https://' . $promoteUrl; // Mặc định thêm https://
+        $promoteUrl = null; // Khởi tạo promoteUrl là null
+        if (isset($promote) && $promote->description) {
+            // Kiểm tra promote và promote->description tồn tại
+            $promoteUrl = $promote->description;
+            // Kiểm tra nếu URL không bắt đầu bằng "http://" hoặc "https://"
+            if (!preg_match('~^(?:f|ht)tps?://~i', $promoteUrl)) {
+                $promoteUrl = 'https://' . $promoteUrl; // Mặc định thêm https://
+            }
         }
     @endphp
+
+    {{-- Sử dụng $promoteUrl trong thẻ <a> --}}
+    @if ($promoteUrl)
+        {{-- Chỉ render thẻ <a> nếu có URL hợp lệ --}}
+        <a href="{{ $promoteUrl }}" target="_blank">
+            <img class="promote-img" src="{{ asset($promote->value ?? '') }}"> {{-- Thêm ?? '' cho promote->value phòng khi nó null --}}
+        </a>
+    @else
+        {{-- Tùy chọn: hiển thị một ảnh placeholder hoặc không hiển thị gì cả nếu không có promoteUrl --}}
+        {{-- <img class="promote-img" src="{{ asset('path/to/default-image.jpg') }}"> --}}
+    @endif
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-12 text-center">

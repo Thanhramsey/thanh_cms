@@ -47,44 +47,29 @@
 <div class="side-menu hidden">
     <div class="inner-wrapper">
         <span class="btn-close" id="btn_sideNavClose"><i></i><i></i></span>
-        <a href="index-web-hosting.html" title="Logo" class="logo side-logo">
-            <img src="{{ asset('portal_assets/img/side-logo.png') }}" alt="logo">
-        </a>
         <nav class="side-nav w-100">
             <ul class="navbar-nav side-navbar">
+                {{-- Ví dụ một mục tĩnh --}}
                 <li class="nav-item">
                     <a class="nav-link scroll" href="#slider-area">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll" href="#about">Hosting</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll" href="#prices">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll" href="#hosting">Vps Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll" href="#testimonials">Reviews</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll" href="#blog">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link scroll" href="#contact">Contact Us</a>
-                </li>
+                {{-- Lặp qua các menu từ biến $menus --}}
+                @foreach ($menus as $menu)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url($menu->url) }}">{{ $menu->title }}</a>
+                        @if ($menu->children->count())
+                            <ul class="sub-side-menu list-unstyled"> {{-- Menu con cho sidebar --}}
+                                @foreach ($menu->children as $child)
+                                    <li>
+                                        <a class="nav-link" href="{{ url($child->url) }}">{{ $child->title }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
+                @endforeach
             </ul>
         </nav>
-
-        <div class="side-footer w-100">
-            <ul class="social-icons-simple">
-                <li><a class="social-icon" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                <li><a class="social-icon" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                <li><a class="social-icon" href="javascript:void(0)"><i class="fab fa-linkedin-in"></i> </a> </li>
-                <li><a class="social-icon" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-            </ul>
-            <p>© 2021 MegaOne. Made With Love by Themesindustry</p>
-        </div>
     </div>
 </div>
 <a id="close_side_menu" href="javascript:void(0);"></a>
